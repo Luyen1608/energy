@@ -134,7 +134,7 @@ body {
   font-family: Roboto, sans-serif, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.65;
+  /* line-height: 1; */
   color: #526484;
   text-align: left;
   background-color: #f5f6fa;
@@ -6358,8 +6358,8 @@ div.dataTables_wrapper div.dataTables_length select {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #6576ff;
-  border-color: #6576ff;
+  background-color: #0D5A00;
+  border-color: #0D5A00;
 }
 
 .page-item.disabled .page-link {
@@ -31748,7 +31748,7 @@ body.nav-shown {
 .nk-menu-main .nk-menu-item.active>.nk-menu-link,
 .nk-menu-main .nk-menu-item.current-menu>.nk-menu-link,
 .nk-menu-main .nk-menu-item:hover>.nk-menu-link {
-  color: #7f8dff;
+  color: #0D5A00;
 }
 
 .nk-menu-main .nk-menu-heading {
@@ -31805,7 +31805,7 @@ body.nav-shown {
     left: 0;
     right: 0;
     height: 3px;
-    background: #7f8dff;
+    background: #0D5A00;
     border-radius: 3px 3px 0 0;
     opacity: 0;
   }
@@ -32451,7 +32451,7 @@ span[data-toggle=tooltip]:focus {
 }
 
 .accordion-head.collapsed .title {
-  color: #526484;
+  color: #0D5A00;
 }
 
 .accordion-inner {
@@ -32463,7 +32463,7 @@ span[data-toggle=tooltip]:focus {
   right: 1rem;
   top: 50%;
   font-size: 1rem;
-  color: #364a63;
+  color: #0D5A00;
   transform: translateY(-50%);
   transition: rotate 0.4s;
   width: 20px;
