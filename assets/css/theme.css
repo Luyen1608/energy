@@ -80,8 +80,48 @@ body {
     color: var(--dark-1);
 }
 
-.div-research-item .accordion-inner {
+.btn-show-more .accordion-inner {
     padding: 0px;
+}
+
+.div-event-item .accordion {
+    border: none;
+}
+
+.div-event-item .accordion-item:last-child .accordion-inner {
+    border-top: none
+}
+
+.div-event-item .btn-show-more .accordion-head {
+    border-radius: 50px;
+    background: #0D5A00;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 5px;
+}
+
+.div-event-item .btn-show-more .accordion-head .accordion-icon {
+
+    color: white;
+}
+
+.div-event-item .btn-show-more .accordion-head {
+    width: 125px;
+}
+
+.div-event-item .btn-show-more {
+    margin-top: -20px;
+}
+
+.div-event-item .btn-show-more .accordion-head h6 {
+    color: #FFF;
+    font-family: "Plus Jakarta Sans ExtraBold";
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
 
 .line-header {
@@ -558,12 +598,17 @@ body {
 
 .div-research-item {
     display: flex;
-    /* width: 50%; */
-    /* height: 262px; */
     padding: 0px 1px;
     align-items: flex-start;
     gap: 10px;
     flex: 1;
+}
+
+.div-event-item {
+    display: flex;
+    padding: 0px 1px;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .div-research-item .accordion,
@@ -610,6 +655,19 @@ body {
     transition: transform 0.3s ease;
 }
 
+.div-event-image {
+    display: flex;
+    width: 409.866px;
+    height: 309px;
+}
+
+.div-event-image img {
+    /* max-width: fit-content; */
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
 .research-content .content-title h5 {
     color: #000;
     font-family: "Plus Jakarta Sans Bold";
@@ -633,7 +691,7 @@ body {
     padding-left: 0px;
 }
 
-.btn-show-more .accordion-head h6 {
+.div-research-item .btn-show-more .accordion-head h6 {
     color: var(--green-1);
     font-family: "Plus Jakarta Sans ExtraBold";
     font-size: 11px;
@@ -743,13 +801,14 @@ a.accordion-head:hover {
 .workshop-info-item em {
     color: var(--green-1)
 }
-.div-load-more{
+
+.div-load-more {
     text-align: center;
     gap: 20px;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
 }
+
 .div-load-more span {
     color: var(--green-1);
     font-family: "Plus Jakarta Sans Bold";
@@ -807,6 +866,7 @@ a.accordion-head:hover {
     font-weight: 500;
     line-height: normal;
 }
+
 .network {
     /* height: 100svh; */
 }
@@ -1213,61 +1273,182 @@ a.accordion-head:hover {
 .img-feature {
     display: flex;
 }
+
 .img-feature img {
     width: 279.223px;
     height: 200px;
     object-fit: fill;
 }
+
+.div-event-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+.div-event-content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+    flex: 1;
+}
+
+.div-event-content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.div-event-content-title h5 {
+    color: #565656;
+
+    /* s4 */
+    font-family: "Plus Jakarta Sans ExtraBold";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.div-event-content-title span {
+    color: #282727;
+    font-family: "Plus Jakarta Sans SemiBold";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.div-event-content-des {
+    color: #000;
+    text-align: justify;
+
+    /* s33 */
+    font-family: "Plus Jakarta Sans Regular";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .feature-img */
 /* Vị trí các nút điều hướng */
 /* Định vị nút điều hướng */
- /* Định vị nút điều hướng */
+/* Định vị nút điều hướng */
 .owl-nav {
     position: absolute;
-    top: 50%; /* Đặt ở giữa chiều cao carousel */
-    width: 100%; /* Trải rộng toàn chiều rộng carousel */
+    top: 50%;
+    /* Đặt ở giữa chiều cao carousel */
+    width: 100%;
+    /* Trải rộng toàn chiều rộng carousel */
     display: flex;
-    justify-content: space-between; /* Đặt nút sang hai bên */
-    transform: translateY(-50%); /* Căn giữa theo trục dọc */
-    pointer-events: none; /* Đảm bảo nút không ảnh hưởng đến layout */
-  }
-  
-  .owl-prev, .owl-next {
-    pointer-events: all; /* Kích hoạt sự kiện click */
-    background-color: white; /* Màu nền trắng */
-    border: 2px solid white; /* Viền trắng */
-    color: black; /* Màu mũi tên */
-    width: 40px; /* Kích thước nút */
+    justify-content: space-between;
+    /* Đặt nút sang hai bên */
+    transform: translateY(-50%);
+    /* Căn giữa theo trục dọc */
+    pointer-events: none;
+    /* Đảm bảo nút không ảnh hưởng đến layout */
+}
+
+.owl-prev,
+.owl-next {
+    pointer-events: all;
+    /* Kích hoạt sự kiện click */
+    background-color: white;
+    /* Màu nền trắng */
+    border: 2px solid white;
+    /* Viền trắng */
+    color: black;
+    /* Màu mũi tên */
+    width: 40px;
+    /* Kích thước nút */
     height: 40px;
-    border-radius: 50%; /* Nút tròn */
+    border-radius: 50%;
+    /* Nút tròn */
     display: flex;
-    align-items: center; /* Căn giữa icon */
+    align-items: center;
+    /* Căn giữa icon */
     justify-content: center;
-    font-size: 20px; /* Kích thước mũi tên */
+    font-size: 20px;
+    /* Kích thước mũi tên */
     cursor: pointer;
-    transition: 0.3s ease; /* Hiệu ứng khi hover */
-  }
-  
-  /* Hiệu ứng khi hover vào nút */
-  .owl-prev:hover, .owl-next:hover {
-    background-color: black; /* Đổi màu nền khi hover */
-    color: white; /* Đổi màu mũi tên khi hover */
-  }
-  
-  /* Tùy chỉnh biểu tượng nút */
-  .owl-prev::before, .owl-next::before {
-    content: ""; /* Loại bỏ mũi tên mặc định */
-  }
-  
-  /* Thêm icon mũi tên tùy chỉnh */
-  .owl-prev::after {
-    content: "<"; /* Mũi tên trái */
-  }
-  
-  .owl-next::after {
-    content: ">"; /* Mũi tên phải */
-  }
-  
+    transition: 0.3s ease;
+    /* Hiệu ứng khi hover */
+}
+
+/* Hiệu ứng khi hover vào nút */
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: black;
+    /* Đổi màu nền khi hover */
+    color: white;
+    /* Đổi màu mũi tên khi hover */
+}
+
+/* Tùy chỉnh biểu tượng nút */
+.owl-prev::before,
+.owl-next::before {
+    content: "";
+    /* Loại bỏ mũi tên mặc định */
+}
+
+/* Thêm icon mũi tên tùy chỉnh */
+.owl-prev::after {
+    content: "<";
+    /* Mũi tên trái */
+}
+
+.owl-next::after {
+    content: ">";
+    /* Mũi tên phải */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1200px) {
     .logo-img {
         max-height: 40px;
