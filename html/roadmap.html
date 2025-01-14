@@ -11,7 +11,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Home</title>
+    <title>ESCO Roadmap</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
@@ -120,8 +120,8 @@
                 </div>
                 <!-- main header @e -->
                 <!-- content @s -->
-                <div class="nk-content bg-gray-img">
-                    <div class="container wide-xl">
+                <div class="nk-content bg-gray-img pb-5">
+                    <div class="container wide-xl" data-aos="fade-up">
                         <div class="nk-content-wrap ">
                             <div class="nk-block-head nk-block-head-sm">
                                 <div class="nk-block-between">
@@ -132,7 +132,7 @@
                                     </div><!-- .nk-block-head-content -->
                                 </div><!-- .nk-block-between -->
                             </div><!-- .nk-block-head -->
-                            <div class="col-12 esco-roadmap">
+                            <div class="col-12 esco-roadmap pl-0 pr-0">
                                 <div class="roadmap-content">
                                     <h3 class="title-roadmap">Roadmap to Establish ESCO Association in Vietnam</h3>
                                     <p class="des-roadmap">Energy Service Companies (ESCOs) play a crucial role in
@@ -152,15 +152,15 @@
                                         development, aligning stakeholders, and addressing policy and regulatory gaps
                                         that hinder the growth of the ESCO industry.</p>
                                 </div>
-                                <div class="roadmap-img col-3">
+                                <div class="roadmap-img col-md-3">
                                     <img src="../assets/images/escoroadmap.png">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="feature-img">
+                    <div class="feature-img" data-aos="fade-up">
                         <div class="feature-title">Featured Image</div>
-                        
+
                         <div class="feature-list-img owl-carousel owl-them pt-5">
                             <div class="img-feature">
                                 <img src="../assets/images/experts1.png">
@@ -184,19 +184,6 @@
                                 <img src="../assets/images/Benchmarkingtool.jpeg">
                             </div>
                         </div>
-                        <!-- <div class="owl-nav">
-                            <button class="owl-prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                    <path d="M7.17089 4.79358L8.17311 5.79585L3.71325 10.2558H19V11.6732H3.71325L8.17311 16.133L7.17089 17.1353L1 10.9644L7.17089 4.79358Z" fill="#383838"/>
-                                  </svg>
-                            </button>
-                            <button class="owl-next">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                    <path d="M12.8291 4.79358L11.8269 5.79585L16.2868 10.2558H1V11.6732H16.2868L11.8269 16.133L12.8291 17.1353L19 10.9644L12.8291 4.79358Z" fill="#383838"/>
-                                  </svg>
-                            </button>
-                        </div> -->
-                        
                     </div>
                 </div>
 
@@ -237,19 +224,27 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../assets/js/bundle.js"></script>
-    <script src="../assets/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <!-- app-root @e -->
+        <script src="../assets/js/bundle.js"></script>
+        <script src="../assets/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="../assets/js/lightgallery.min.js"></script>
+        <script src="../assets/js/lg-thumbnail.umd.min.js"></script>
+        <script src="../assets/js/lg-zoom.umd.min.js"></script>
+        <script src="../assets/js/common.js"></script>
     <script>
         $(".feature-list-img").owlCarousel({
             loop: true,
             nav: true,
             margin: 20,
-            
+            navText: [
+                '<div class=" custom-prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.17089 4.31445L8.17311 5.31672L3.71325 9.77663H19V11.1941H3.71325L8.17311 15.6539L7.17089 16.6562L1 10.4853L7.17089 4.31445Z"fill="#383838" /></svg></div>', 
+                ' <div class=" custom-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"fill = "none" ><path d="M12.8291 4.31445L11.8269 5.31672L16.2868 9.77663H1V11.1941H16.2868L11.8269 15.6539L12.8291 16.6562L19 10.4853L12.8291 4.31445Z" fill="#383838" /></svg ></div > ', 
+            ],
             responsive: {
                 0: {
-                    items: 1           // 1 item trên màn hình nhỏ
+                    items: 2           // 1 item trên màn hình nhỏ
                 },
                 600: {
                     items: 3           // 2 item trên màn hình vừa

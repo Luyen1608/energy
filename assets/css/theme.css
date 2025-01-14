@@ -100,6 +100,7 @@ body {
     padding: 10px 20px;
     align-items: center;
     gap: 5px;
+    margin-top: 15px;
 }
 
 .div-event-item .btn-show-more .accordion-head .accordion-icon {
@@ -205,7 +206,7 @@ body {
 
 .bg-gray-img {
     position: relative;
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     background-color: white;
@@ -351,6 +352,12 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 270px);
 
+}
+
+.img-outcomes {
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 .div-outcomes-item {
@@ -604,11 +611,30 @@ body {
     flex: 1;
 }
 
+.nk-content.nk-content.menu-mobile {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.enterprises {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.div-title-search .nk-content-wrap {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 .div-event-item {
     display: flex;
     padding: 0px 1px;
     align-items: flex-start;
-    gap: 10px;
+    gap: 25px;
+}
+
+.div-event-list .w-100 {
+    gap: 50px;
 }
 
 .div-research-item .accordion,
@@ -666,6 +692,7 @@ body {
     object-fit: cover;
     width: 100%;
     transition: transform 0.3s ease;
+    border-radius: 20px;
 }
 
 .research-content .content-title h5 {
@@ -1025,6 +1052,7 @@ a.accordion-head:hover {
 }
 
 .list-logo-nw {
+    width: 100%;
     display: flex;
     padding: 30px 200px;
     justify-content: center;
@@ -1155,8 +1183,8 @@ a.accordion-head:hover {
 
 .enterprise-content .enterprise-line {
     display: flex;
-    align-items: center;
     gap: 5px;
+    align-items: flex-start;
     align-self: stretch;
 }
 
@@ -1180,6 +1208,8 @@ a.accordion-head:hover {
 
 .enterprise-item .enterprise-img {
     width: 350px;
+    justify-content: center;
+    display: flex;
     text-align: center;
 }
 
@@ -1193,7 +1223,8 @@ a.accordion-head:hover {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 25px;
 }
 
 .experts-item {
@@ -1202,11 +1233,33 @@ a.accordion-head:hover {
     align-items: center;
     gap: 13px;
     flex-shrink: 0;
-    width: 23%;
+
+
+    width: 22%;
+    aspect-ratio: 277/302;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.experts-img {
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+
+    border-radius: 10px;
 }
 
 .experts-item img {
-    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
 }
 
 .experts-title {
@@ -1217,6 +1270,17 @@ a.accordion-head:hover {
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+
+
+    margin-top: 8px;
+    /* Khoảng cách giữa hình và tiêu đề */
+    font-size: 16px;
+    /* Kích thước chữ */
+    text-align: center;
+    /* Căn giữa văn bản */
+    font-weight: bold;
+    color: #333;
+
 }
 
 .esco-roadmap {
@@ -1326,6 +1390,7 @@ a.accordion-head:hover {
 }
 
 .div-event-content-des {
+    padding-bottom: 5px;
     color: #000;
     text-align: justify;
 
@@ -1337,119 +1402,387 @@ a.accordion-head:hover {
     line-height: normal;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* .feature-img */
-/* Vị trí các nút điều hướng */
-/* Định vị nút điều hướng */
-/* Định vị nút điều hướng */
+.custom-next,
+.custom-prev {
+    border-radius: 100px;
+    border: 1px solid #DEDEDE;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+}
+
+.custom-next svg,
+.custom-prev svg {
+    height: auto;
+}
+
+.feature-img .owl-carousel .owl-nav,
+.feature-img .owl-carousel .owl-dots {
+    display: flex;
+    gap: 54px;
+    position: absolute;
+    right: 0;
+    bottom: 121%;
+}
+
 .owl-nav {
     position: absolute;
     top: 50%;
-    /* Đặt ở giữa chiều cao carousel */
     width: 100%;
-    /* Trải rộng toàn chiều rộng carousel */
     display: flex;
     justify-content: space-between;
-    /* Đặt nút sang hai bên */
     transform: translateY(-50%);
-    /* Căn giữa theo trục dọc */
     pointer-events: none;
-    /* Đảm bảo nút không ảnh hưởng đến layout */
 }
 
 .owl-prev,
 .owl-next {
     pointer-events: all;
-    /* Kích hoạt sự kiện click */
     background-color: white;
-    /* Màu nền trắng */
     border: 2px solid white;
-    /* Viền trắng */
     color: black;
-    /* Màu mũi tên */
     width: 40px;
-    /* Kích thước nút */
     height: 40px;
     border-radius: 50%;
-    /* Nút tròn */
     display: flex;
     align-items: center;
-    /* Căn giữa icon */
     justify-content: center;
     font-size: 20px;
-    /* Kích thước mũi tên */
     cursor: pointer;
     transition: 0.3s ease;
-    /* Hiệu ứng khi hover */
 }
 
 /* Hiệu ứng khi hover vào nút */
-.owl-prev:hover,
-.owl-next:hover {
-    background-color: black;
-    /* Đổi màu nền khi hover */
-    color: white;
-    /* Đổi màu mũi tên khi hover */
+.custom-next:hover,
+.custom-prev:hover {
+    background-color: var(--green-1);
+    color: rgb(255, 255, 255);
 }
 
-/* Tùy chỉnh biểu tượng nút */
-.owl-prev::before,
-.owl-next::before {
+.custom-next:hover svg,
+.custom-prev:hover svg {
+    stroke: #fff;
+    /* fill: rgb(255, 255, 255); */
+}
+
+
+.cat__tags {
+    flex-wrap: nowrap;
+    padding: 0px 0px 10px;
+    column-gap: 30px;
+    overflow: auto;
+    margin-bottom: 26px;
+}
+
+.cat__tag-item a.active {
+    color: #ee6055;
+}
+
+.cat__tag-item a {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2e04;
+    padding: 5px 0px;
+    position: relative;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cat__tag-item {
+    min-width: 100px;
+    text-align: center;
+}
+
+.cat__tag-item a.active::after {
+    position: absolute;
     content: "";
-    /* Loại bỏ mũi tên mặc định */
+    background-image: url(../images/line-red.png);
+    width: 90%;
+    height: 2px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Thêm icon mũi tên tùy chỉnh */
-.owl-prev::after {
-    content: "<";
-    /* Mũi tên trái */
+.cat__tag-item:hover a {
+    color: #ee6055;
 }
 
-.owl-next::after {
-    content: ">";
-    /* Mũi tên phải */
+.images__layout {
+    line-height: 0;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 4;
+    -moz-column-gap: 0px;
+    column-count: 4;
+    column-gap: 5px;
+    margin-bottom: 50px;
 }
 
+.images__layout a {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 6px;
+    display: block;
+}
 
+img {
+    display: block;
+    max-width: 100%;
+    transition: 0.2s;
+}
 
+.images__layout a {
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+}
 
+.images__layout a img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.images__layout a:hover img {
+    transform: scale(1.1);
+    opacity: 1;
 
+}
 
+/* Ghi đè màu nền đen */
+.lg-backdrop {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    /* Màu nền trắng với độ trong suốt */
+}
 
+/* Định nghĩa thêm cho phần hiển thị */
+.lg-outer {
+    background-color: #eeeded !important;
+    /* Màu nền trắng */
+}
 
+.div-logo-ee {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
+.ee-item {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
 
+.ee-item:hover {
+    background: #FFF;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
+}
 
+.ee-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ee-detail-container-title span {
+    color: var(--Neutral-1, #303030);
+    font-family: "Plus Jakarta Sans ExtraBold";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.ee-detail-des {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ee-detail-container .detail-date {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    align-items: center;
+}
+
+.ee-detail-container .detail-date span {
+    color: var(--black, #303030);
+    font-family: "Plus Jakarta Sans SemiBold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.ee-detail-container .detail-des {
+    font-family: "Plus Jakarta Sans Bold";
+    color: var(--black, #303030);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.ee-detail-container .detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    align-self: stretch;
+}
+
+.ee-detail-container .detail-content p {
+    color: var(--black, #303030);
+    font-family: "Plus Jakarta Sans Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.contact-map {
+    width: 40%;
+    padding-left: 10px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.info-contact {
+    flex: 1;
+    text-align: center;
+}
+
+.map-frame {
+    width: 100%;
+}
+
+.map-frame img {
+    width: 100%;
+}
+
+.info-contact .div-title {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-submit-send {
+    display: flex;
+    width: 100%;
+    padding: 19px;
+    height: 57px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--green-1);
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-submit-send:hover {
+    background: #072b01;
+}
+
+.form-control:focus,
+div.dataTables_wrapper div.dataTables_filter input:focus,
+.dual-listbox .dual-listbox__search:focus {
+    color: #059e0d;
+    background-color: #fff;
+    border-color: #059e0d;
+    outline: 0;
+    box-shadow: 0 0 0 3px #0e5a0027;
+}
+
+.btn-submit-send span {
+    color: #fff;
+    font-family: "Plus Jakarta Sans Bold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.info-contact .title-big {
+    color: var(--green-1);
+    font-family: "Plus Jakarta Sans ExtraBold";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.contact-map h5 {
+    color: #000;
+    font-family: "Plus Jakarta Sans Bold";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.contact-map span {
+    font-family: "Plus Jakarta Sans Regular";
+    font-weight: 400;
+}
+
+.ongoing {
+    color: #FFF;
+    text-align: center;
+    font-family: "Plus Jakarta Sans Bold";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    position: absolute;
+}
 
 
 @media (max-width: 1200px) {
+    .div-materials-item {
+        padding: 30px 35px
+    }
+
+    .esco-roadmap {
+        gap: 30px;
+    }
+
+    .roadmap-content .title-roadmap {
+        font-size: 26px;
+    }
+
+    .roadmap-content .des-roadmap {
+        font-size: 15px;
+    }
+
+    .list-logo-nw {
+        padding: 30px 50px;
+    }
+
     .logo-img {
         max-height: 40px;
     }
@@ -1464,6 +1797,77 @@ a.accordion-head:hover {
 }
 
 @media (max-width: 992px) {
+    .div-materials-image {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        top: -75px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .div-materials-item {
+        width: 100%;
+    }
+
+    .esco-roadmap {
+        gap: 15px;
+    }
+
+    .roadmap-content .title-roadmap {
+        font-size: 23px;
+    }
+
+    .roadmap-content .des-roadmap {
+        font-size: 13px;
+    }
+
+    .experts-item {
+        width: 30%;
+    }
+
+    .div-event-content-title {
+        gap: 0px;
+    }
+
+    .div-event-content-text {
+        gap: 15px;
+    }
+
+    .div-event-content-title h5 {
+        font-size: 12px;
+    }
+
+    .div-event-content-des {
+        font-size: 12px;
+    }
+
+    .div-event-content-title span {
+        font-size: 16px;
+    }
+
+    .div-event-list .w-100 {
+        gap: 25px;
+    }
+
+    .div-title-search .title-search h3 {
+        font-size: 35px;
+    }
+
+    .enterprise-item .enterprise-img {
+        width: 250px;
+    }
+
+    .ee-item {
+        width: 230px;
+        height: 230px;
+        padding: 20px;
+    }
+
+    .div-logo-ee {
+        gap: 15px;
+    }
+
     .research-studies .div-tab-block {
         width: 32%;
     }
@@ -1527,6 +1931,58 @@ a.accordion-head:hover {
 }
 
 @media (max-width: 768.98px) {
+    .esco-roadmap {
+        flex-direction: column;
+    }
+
+    .div-event-item {
+        flex-direction: column;
+    }
+
+    .div-event-image {
+        width: 100%;
+    }
+
+    .block-title-search {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .enterprise-item {
+        flex-direction: column;
+    }
+
+    .enterprise-item {
+        gap: 20px;
+    }
+
+    .ee-item {
+        width: 200px;
+        height: 200px;
+        padding: 15px;
+    }
+
+    .ee-detail-container .detail-date span {
+        font-size: 14px;
+    }
+
+    .ee-detail-container-title span {
+        font-size: 25px;
+    }
+
+    .ee-detail-container .detail-des {
+        font-size: 14px;
+    }
+
+    .ee-detail-container .detail-content p {
+        font-size: 14px;
+    }
+
+    .contact-map {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
     .research-studies .div-tab-block {
         width: 100%;
     }
@@ -1538,6 +1994,8 @@ a.accordion-head:hover {
     .div-research-image {
         width: 100%;
         text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .research-studies .div-research-content span {
@@ -1566,7 +2024,72 @@ a.accordion-head:hover {
     }
 }
 
+@media (max-width: 992px) {
+    .images__layout {
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+
+    .experts-item {
+        width: 45%;
+    }
+}
+
+
 @media (max-width: 575.89px) {
+    .div-materials-item {
+        margin-top: 80px;
+    }
+
+    .div-materials-image {
+        position: absolute;
+        width: 34%;
+        right: 15px;
+        top: -40px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .div-materials-content {
+        width: 65%;
+    }
+
+    .div-materials-content {
+        height: auto;
+        gap: 20px;
+    }
+
+    .images__layout {
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+    .cat__tags {
+        column-gap: 10px;
+    }
+
+    .cat__tag-item a {
+        font-size: 12px;
+    }
+
+    .cat__tag-item {
+        min-width: 75px;
+    }
+
+    .logo-network-list .title-logo-network span {
+        font-size: 20px;
+    }
+
+    .ee-item {
+        width: 110px;
+        height: 110px;
+        padding: 10px;
+    }
+
+    .title-big {
+        font-size: 22px;
+    }
+
     .div-key-partners .key50 span {
         font-size: 14px;
         width: 50%;
@@ -1623,6 +2146,12 @@ a.accordion-head:hover {
 }
 
 @media (min-width: 992px) {
+
+    .nk-header .nk-menu-main>li.nk-menu-item.active>.nk-menu-link:before,
+    .nk-header .nk-menu-main>li.nk-menu-item.current-menu>.nk-menu-link:before {
+        opacity: 0;
+    }
+
     .nk-aside {
         display: none;
     }
