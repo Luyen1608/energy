@@ -829,11 +829,50 @@ a.accordion-head:hover {
     color: var(--green-1)
 }
 
+.home .div-load-more {
+    gap: 5px;
+    position: absolute;
+    top: 87svh;
+    z-index: 2700;
+}
+
 .div-load-more {
     text-align: center;
     gap: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.home .load-more-text span {
+    color: white;
+    font-size: 13px;
+}
+
+.banner-main {
+    position: relative;
+}
+
+.home .over-layer {
+    height: 100%;
+    width: 40%;
+    opacity: 0.2;
+    background: #000;
+    position: absolute;
+    z-index: 2599;
+}
+
+.text-banner span {
+    color: #FFF;
+    font-family: "Plus Jakarta Sans ExtraBold";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    position: absolute;
+    z-index: 2600;
+    width: 40%;
+    top: 25%;
+    left: 10%;
 }
 
 .div-load-more span {
@@ -1734,6 +1773,8 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
     font-weight: 800;
     line-height: normal;
 }
+
+.text-banner {}
 
 .contact-map h5 {
     color: #000;
