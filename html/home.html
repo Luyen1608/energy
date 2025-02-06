@@ -122,7 +122,8 @@
                 <div class="banner-main">
                     <div class="over-layer"></div>
                     <div class="text-banner">
-                        <span>Promotion of Energy Efficiency in Supporting <br>and Food Processing <br>Industries in Vietnam</span>
+                        <span>Promotion of Energy Efficiency in Supporting <br>and Food Processing <br>Industries in
+                            Vietnam</span>
                     </div>
                     <div class="banner-header">
                         <div class="slider-banner owl-carousel owl-theme">
@@ -132,7 +133,7 @@
                                 style="width:100vw;height: 100svh;background-image: url('../assets/images/banner1.png');">
                             </div>
                             <div class="slider-banner-item"
-                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner2.jpg');">
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner_image.png');">
                             </div>
                             <div class="slider-banner-item"
                                 style="width:100vw;height: 100svh;background-image: url('../assets/images/banner3.jpg">
@@ -587,7 +588,8 @@
                             <div class="footer-content">
                                 <span class="title-footer">Vietnam Chamber of Commerce and Industry (VCCI)</span>
                                 <span class="title-footer-2">Project: Promotion of Energy Efficiency in Supporting and
-                                    Food Processing <span style="display:inline-block">Industries in Vietnam</span></span>
+                                    Food Processing <span style="display:inline-block">Industries in
+                                        Vietnam</span></span>
                                 <div class="info-footer">
                                     <span class="contact-ft"><span class="ft-contact-high">Project Contact
                                             person:</span> Ms. Pham Thai An</span>
@@ -631,6 +633,8 @@
                 $(".slider-banner").owlCarousel({
                     items: 1,
                     loop: true,
+                    autoplay: true,          // Tự động chạy
+                    autoplayTimeout: 3000,   // Thời gian chờ giữa các slide (3s)
                 });
             });
             gsap.to(".div-load-more", {
