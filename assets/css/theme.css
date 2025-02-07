@@ -854,11 +854,13 @@ a.accordion-head:hover {
 
 .home .over-layer {
     height: 100%;
-    width: 40%;
-    opacity: 0.2;
+    width: 46%;
     background: #000;
     position: absolute;
     z-index: 2599;
+    opacity: 0.2;
+    background: linear-gradient(90deg, #598D50 0%, rgba(13, 90, 0, 0.34) 52.5%, #0D5A00 100%);
+    filter: blur(4.5px);
 }
 
 .text-banner span {
