@@ -161,13 +161,14 @@ body {
     background-position: center;
 }
 
-.slider-banner .slider-banner-item {
+.slider-banner .slider-banner-item, .slider-banner-mb .slider-banner-item {
     position: relative;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
 }
+
 
 .slider-banner {
     position: absolute;
@@ -489,7 +490,7 @@ body {
     align-items: flex-start;
     gap: 5px;
     align-self: stretch;
-    width: 65%;
+    width: 100%;
 }
 
 .footer-content span.title-footer {
@@ -726,7 +727,18 @@ body {
     font-weight: 800;
     line-height: normal;
 }
-
+.banner-mb{
+    display: none;
+}
+.banner-pc{
+    display: block;
+}
+.br-mb{
+    display: block;
+}
+.br-pc{
+    display: none;
+}
 a.accordion-head:hover {
     opacity: 0.7;
 }
@@ -871,7 +883,7 @@ a.accordion-head:hover {
     font-weight: 800;
     line-height: normal;
     position: absolute;
-    z-index: 2600;
+    z-index: 600;
     width: 40%;
     top: 25%;
     left: 10%;
@@ -1803,9 +1815,16 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
     position: absolute;
 }
-
+@media (max-width: 1366px) {
+    .text-banner span {
+        font-size: 40px;
+    }
+}
 
 @media (max-width: 1200px) {
+    .text-banner span {
+        font-size: 35px;
+    }
     .div-materials-item {
         padding: 30px 35px
     }
@@ -1840,6 +1859,24 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 @media (max-width: 992px) {
+    .banner-mb{
+        display: block;
+    }
+    .banner-pc{
+        display: none;
+    }
+    .br-mb{
+        display: none;
+    }
+    .br-pc{
+        display: block;
+    }
+    .text-banner span {
+        left: 5%;
+        width: 100%;
+        top: 12%;
+        font-size: 30px;
+    }
     .div-materials-image {
         position: absolute;
         width: 50%;
@@ -1848,6 +1885,7 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
         justify-content: center;
         display: flex;
     }
+
 
     .div-materials-item {
         width: 100%;
@@ -1974,6 +2012,9 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 @media (max-width: 768.98px) {
+    .text-banner span {
+        font-size: 27px;
+    }
     .esco-roadmap {
         flex-direction: column;
     }
@@ -2080,6 +2121,9 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
 
 @media (max-width: 575.89px) {
+    .text-banner span {
+        font-size: 25px;
+    }
     .div-materials-item {
         margin-top: 80px;
     }
@@ -2188,7 +2232,8 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992.8px) {
+    
 
     .nk-header .nk-menu-main>li.nk-menu-item.active>.nk-menu-link:before,
     .nk-header .nk-menu-main>li.nk-menu-item.current-menu>.nk-menu-link:before {

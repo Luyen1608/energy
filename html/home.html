@@ -122,21 +122,32 @@
                 <div class="banner-main">
                     <div class="over-layer"></div>
                     <div class="text-banner">
-                        <span>Promotion of Energy Efficiency in Supporting <br>and Food Processing <br>Industries in
+                        <span>Promotion of Energy Efficiency in Supporting <br>and Food Processing <br class="br-mb">Industries in
                             Vietnam</span>
                     </div>
-                    <div class="banner-header">
+                    <div class="banner-header banner-pc">
                         <div class="slider-banner owl-carousel owl-theme">
-                            <!-- owl-carousel owl-theme -->
-                            <!-- <div class="slider-banner-item" id="banner1" style="width:100vw;height: 100svh;"></div> -->
                             <div class="slider-banner-item"
                                 style="width:100vw;height: 100svh;background-image: url('../assets/images/banner1.png');">
                             </div>
-                            <div class="slider-banner-item"
-                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner_image.png');">
+                             <div class="slider-banner-item"
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner2.png');">
                             </div>
                             <div class="slider-banner-item"
-                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner3.png">
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner3.png' )">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-header banner-mb">
+                        <div class="slider-banner-mb owl-carousel owl-theme">
+                            <div class="slider-banner-item"
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner1_mb.png');">
+                            </div>
+                             <div class="slider-banner-item"
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner2_mb.png');">
+                            </div>
+                            <div class="slider-banner-item"
+                                style="width:100vw;height: 100svh;background-image: url('../assets/images/banner3_mb.png' )">
                             </div>
                         </div>
                     </div>
@@ -599,9 +610,15 @@
                                         0973.654.038</span>
                                     <span class="contact-ft"><span class="ft-contact-high">Email: </span>
                                         anpt-itb@vcci.com.vn</span>
+                                        <span class="contact-ft"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="28"
+                                            viewBox="0 0 48 46" fill="none">
+                                            <path
+                                                d="M48 23.0576C48 10.3298 37.248 0 24 0C10.752 0 0 10.3298 0 23.0576C0 34.2175 8.256 43.5098 19.2 45.6541V29.9749H14.4V23.0576H19.2V17.2932C19.2 12.8431 22.968 9.22306 27.6 9.22306H33.6V16.1404H28.8C27.48 16.1404 26.4 17.1779 26.4 18.4461V23.0576H33.6V29.9749H26.4V46C38.52 44.8471 48 35.0246 48 23.0576Z"
+                                                fill="#0D5A00" />
+                                        </svg></a></span>
                                 </div>
                             </div>
-                            <div class="footer-contact">
+                            <div class="footer-contact" style="display: none;">
                                 <span>Contact</span>
                                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="46"
                                         viewBox="0 0 48 46" fill="none">
@@ -633,10 +650,18 @@
                 $(".slider-banner").owlCarousel({
                     items: 1,
                     loop: true,
-                    autoplay: true,          // Tự động chạy
-                    autoplayTimeout: 3000,   // Thời gian chờ giữa các slide (3s)
+                    // autoplay: true,          // Tự động chạy
+                    // autoplayTimeout: 3000,   // Thời gian chờ giữa các slide (3s)
                 });
+                $(".slider-banner-mb").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    // autoplay: true,          // Tự động chạy
+                    // autoplayTimeout: 3000,   // Thời gian chờ giữa các slide (3s)
+                });
+               
             });
+            
             gsap.to(".div-load-more", {
                 y: 10,       // Di chuyển xuống 10px
                 opacity: 0,  // Mờ dần
