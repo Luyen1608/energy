@@ -371,7 +371,9 @@ body {
 
     padding: 46px;
 }
-
+.icon-langue:hover{
+    opacity: 0.5;
+}
 .div-objective-number {
     color: var(--green-1);
     text-align: justify;
