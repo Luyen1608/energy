@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPVietNam</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="mynavtop">
+        <div class="container">
+            <nav class="navbar mb-0" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav mainmenu">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu1</a></li>
+                                <li><a href="#">Menu1</a></li>
+                                <li><a href="#">Menu1</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="khoahoc.html">CÁC KHÓA HỌC</a></li>
+                        <li><a href="giangvien.html">GIẢNG VIÊN</a></li>
+                        <li><a href="#">TIN TỨC - SỰ KIỆN</a></li>
+                        <li><a href="#">THƯ VIỆN</a></li>
+                        <li><a href="#">KHẢO SÁT</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right mb-10">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle changelanguage_en" data-toggle="dropdown">English <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="changelanguage_vn">Tiếng Việt</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="btn-login" data-toggle="modal" data-target="#boxlogin">Đăng nhập</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+        </div>
+    </nav>
+    <section class="whitebg">
+        <div class="container" id="banner">
+            <div class="logo">
+                <a href="#1"><img src="imgs/logo.png"></a>
+            </div>
+            <div class="header-right">
+                <h1>CỔNG THÔNG TIN ĐÀO TẠO TRỰC TUYẾN CỦA CỤC SỞ HỮU TRÍ TUỆ</h1>
+                <form method="POST">
+                    <div class="searchbox"><input class="textsearch" type="text" placeholder="Tìm kiếm khoá học...">
+                        <input class="btnsubmit" type="submit" value="Tìm kiếm"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="container mbt-6">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="whitebg menuleft">
+                    <div class="panel-group mb-0" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a href="index.html">
+                                        <span class="icon"><img src="imgs/home.png" /></span>
+                                        Trang chủ
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="icon"><img src="imgs/info.png" /></span>
+                                        Giới thiệu
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <li><a href="#1">Giới thiệu trung tâm</a></li>
+                                    <li><a href="#1">Chương trình đào tạo</a></li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a href="#1">
+                                        <span class="icon"><img src="imgs/news.png" /></span>
+                                        Tin tức - Sự kiện
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a href="#1">
+                                        <span class="icon"><img src="imgs/thuvien.png" /></span>
+                                        Thư viện
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a href="#1">
+                                        <span class="icon"><img src="imgs/khaosat.png" /></span>
+                                        Khảo sát
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="whitebg p20">
+                    <h2 class="titlepage">Tin tức - Sự kiện</h1>
+                    <div class="mybreadcrumb">
+                        <a href="index.html">Trang chủ</a>
+                        <a href="tintuc.html">Tin tức - Sự kiện</a>
+                        <a href="#1">Thông báo</a>
+                    </div>
+                    <div class="news-detail">
+                        <h1 class="title-news">Nữ thủ khoa Ngoại thương tốt nghiệp điểm tuyệt đối</h1>
+                        <p class="datetime">Chủ nhật, 23/8/2020, 07:00</p>
+                        <div class="detail">
+                            <p>Tò mò khi thấy chị gái tiếc nuối vì trượt Đại học Ngoại thương, Minh Hòa đã tìm hiểu, ứng tuyển và trở thành thủ khoa đầu ra của trường.</p>
+                            <p>Nguyễn Thị Minh Hòa, quê Hải Phòng, hoàn thành học kỳ I năm nhất ở Đại học Ngoại thương cuối năm 2016. Nhận điểm A Kinh tế vĩ mô, cũng là môn đầu tiên biết điểm, Hòa không thể ngờ sẽ tốt nghiệp với một bảng điểm toàn A trong suốt bốn năm học. "Hành trình đến với danh hiệu thủ khoa giống một giấc mơ mà mình chưa từng dám nghĩ đến", cô gái sinh năm 1998 nói.                            </p>
+                            <p>Khi cô bé Hòa học lớp 6, chị gái rất buồn vì thi Đại học Ngoại thương nhưng không đủ điểm. Lúc đó, Hòa tò mò "Ngoại thương thế nào mà chị lại thích đến vậy? Tại sao vào trường khó như thế?" và bắt đầu tìm hiểu. Năm lớp 12, cô học trò trường THPT chuyên Trần Phú mạnh dạn nộp vào Kinh tế đối ngoại, Đại học Ngoại thương cơ sở Hà Nội, đạt 26,5 điểm khối D01 (Toán, Văn, Tiếng Anh).</p>
+                            <center><img src="images/news/h1.jpg" class="mb-3" /></center>
+                            <p>Vào đại học, Hòa choáng ngợp khi thấy cách học khác xa so với phổ thông. Cùng với áp lực sống xa nhà, nữ sinh tỏ ra lúng túng. Để vượt qua, Hòa tham gia các hội nhóm của cựu sinh viên, hỏi cách học của anh chị đi trước. "Mình thường xin nhận xét về các môn học, cách học phù hợp với phong cách giảng dạy của từng giảng viên và cảm thấy may mắn khi nhận được sự giúp đỡ nhiệt tình", Hòa kể.</p>
+                            <p>Đặt mục tiêu tốt nghiệp loại xuất sắc, Hòa chú ý phần giảng viên nhấn mạnh và ghi chú cẩn thận, xác định đây là phần cốt lõi. Nếu thắc mắc, em tự đặt câu hỏi cho mình trước, sau đó trao đổi với bạn bè, nếu vẫn chưa hiểu sẽ hỏi thầy cô. Vì học hiểu bản chất, không học vẹt, việc ôn thi với Hòa không quá vất vả.</p>
+                            <p>Có thời điểm Hòa bị ảnh hưởng tinh thần bởi biến cố gia đình và các mối quan hệ bạn bè, nhưng may mắn được bố mẹ, chị gái và bạn thân động viên, giúp dần lấy lại phong độ. Sau 1-2 kỳ đạt điểm tối đa, nữ sinh càng quyết tâm duy trì thành tích. Mỗi khi điểm thành phần không được như ý, Hòa chủ động đề nghị thầy cô cho làm thêm tiểu luận, nghiên cứu để cải thiện và duy trì kết quả học tập</p>
+                            <p>Cuối năm ba, Hòa giành học bổng AIMS dành cho sinh viên Đông Nam Á, đến Hàn Quốc học trao đổi trong bốn tháng. Trải nghiệm tại xứ sở kim chi giúp nữ sinh làm quen với cách học tập chủ động của sinh viên quốc tế và học cách tăng cường tương tác với giáo viên.</p>
+                            <p>Trở về từ chuyến trao đổi, Hòa mạnh dạn tham dự cuộc thi tài năng trẻ Logistics Việt Nam, diễn ra trong bốn tháng cuối năm 2019. Vì là sân chơi cho sinh viên tại các trường giảng dạy kinh tế, thương mại, việc đạt thứ hạng cao tại cuộc thi Hòa chưa dám nghĩ đến. Sau khi vượt qua số lượng lớn đội thi của Đại học Ngoại thương, trở thành đội duy nhất đại diện trường tham dự cuộc thi, Hòa và cả nhóm "thừa thắng xông lên", giành giải nhất toàn miền Bắc.</p>
+                            <p>Quá trình tham dự cuộc thi, nữ sinh vừa phải hoàn thiện nghiên cứu đồng thời ôn thi học kỳ và làm thêm. "Có nhiều lúc mình mệt đến mức không nói chuyện với ai, nhiều đêm thức trắng. Chưa bao giờ mình phải làm nhiều việc một lúc như vậy", nữ sinh kể. Hòa vẫn nhớ trong trận chung kết toàn quốc diễn ra tại TP HCM, nữ sinh đã đứng trên sân khấu lớn, thuyết trình về đề tài trước rất nhiều chuyên gia, dám phản biện và trả lời câu hỏi hóc búa của giám khảo. Tuy không giành giải nhất chung cuộc, những trải nghiệm đã có tại cuộc thi giúp Hòa tự tin hơn trong lĩnh vực giao tiếp, củng cố niềm yêu thích với ngành đang học.</p>
+                            <p>Nhắc về điều tiếc nuối nhất trong bốn năm đại học, Hòa cho rằng những năm đầu đã quá mải mê với việc làm thêm, nghĩ có thu nhập là được nên thử sức với việc trợ giảng, gia sư và marketing. Tuy nhiên, đây đều là những lĩnh vực Hòa không thực sự yêu thích, cũng không đúng chuyên ngành và sử dụng kiến thức học ở trường. Do đó, đến tận lúc ra trường, kinh nghiệm làm việc của Hòa vẫn không có gì. Nếu được quay lại, nữ sinh sẽ chọn công việc liên quan đến ngành học, thậm chí chấp nhận thực tập không lương để ra trường đỡ bỡ ngỡ.</p>
+                        </div>
+                        <div class="text-right">Nguồn: Cục Sở Hữu Trí Tuệ</div>
+                    </div>
+                    <div class="othernews">
+                        <div class="titleline">
+                            <h4>Các tin khác</h4><span class="line"></span>
+                        </div>
+                        <li><a href="#1">Những rào cản ngăn thế hệ trẻ Việt Nam học tập</a></li>
+                        <li><a href="#1">Châu Âu mở cửa trường học sau kỳ nghỉ hè</a></li>
+                        <li><a href="#1">Hàng loạt đại học công bố điểm chuẩn học bạ</a></li>
+                        <li><a href="#1">Thực hành tiếng Anh thế nào cho hiệu quả?</a></li>
+                        <li><a href="#1">TP HCM 'gồng mình' trước áp lực học sinh tăng</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="menufooter">
+        <div class="container">
+            <a href="#1">Giới thiệu</a>
+            <a href="#1">Các khóa học</a>
+            <a href="#1">Giảng viên</a>
+            <a href="#1">Tin tức - Sự kiện</a>
+            <a href="#1">Thư viện</a>
+            <a href="#1">Khảo sát</a>
+        </div>
+        <div class="chatonline">
+            <a href="#1" title="chat trực tuyến"><img src="imgs/livechat.png" /></a>
+            <a href="#1" title="chat qua Zalo"><img src="imgs/zalochat.png" /></a>
+        </div>
+    </section>
+    <section id="footer" class="graybg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-2">
+                    <div class="logo">
+                        <a href="#1"><img src="imgs/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="mb-3">
+                        <h2 class="mt-0">CỤC SỞ HỮU TRÍ TUỆ</h2>
+                        <h4>Trung tâm Nghiên cứu, Đào tạo và Hỗ trợ, Tư vấn</h4>
+                        <p>Phòng 101 Nhà D, 386 Nguyễn Trãi, Hà Nội</p>
+                        <p>Điện thoại: 024.38583069</p>
+                        <p>Email: hotro@cucsohuu.com.vn</p>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-3">
+                    <select class="lienketweb">
+                        <option selected>Liên kết website</option>
+                        <option value="1">Liên kết 1</option>
+                        <option value="2">Liên kết 2</option>
+                        <option value="3">Liên kết 3</option>
+                        <option value="4">Liên kết 4</option>
+                    </select>
+                    <div class="counter">
+                        Lượt truy cập: <strong>123456789</strong>
+                    </div>
+                    <div class="social">
+                        <a href="#1" class="link-facebook mr-5" id="link-facebook"
+                            title="Liên kết facebook">facebook</a>
+                        <a href="#1" class="link-youtube" title="Liên kết youtube">youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<div class="modal fade" id="boxlogin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modalLabel">Đăng nhập</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <p class="input_title">Tài khoản</p>
+                    <input type="text" id="inputEmail" class="form-control mb-10" required autofocus>
+                    <p class="input_title">Mật khẩu</p>
+                    <input type="password" id="inputPassword" class="form-control" required>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

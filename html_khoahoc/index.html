@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>IPVietNam</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+   <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="css/swiper.min.css">
+   <link rel="stylesheet" href="css/custom.css">
+   <link rel="stylesheet" href="css/calendar.css">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/calendar.js"></script>
+   <script src="js/custom.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<style>
+    .custom-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .discount-label {
+            background-color: #F59E0B; /* Màu vàng cam cho giảm giá */
+        }
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #374151; /* Màu xám đậm */
+            margin-top: 4px;
+        }
+        .old-price {
+            font-size: 14px;
+            color: #9CA3AF; /* Màu xám nhạt */
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .course-card {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card.featured {
+            border: 2px solid #F59E0B; /* Viền màu vàng cam */
+             box-shadow: 0 0 30px rgba(245, 158, 11, 0.7); /* Glow effect */
+        }
+        .featured h2{
+             color: #F59E0B; /* Màu vàng cam */
+        }
+        /* Fire border animation */
+        @keyframes fire-border {
+          0% {
+            box-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+            border-color: #F59E0B;
+          }
+          50% {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); /* Tăng độ rộng bóng đổ */
+            border-color: #F59E0B;
+          }
+          100% {
+            box-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+            border-color: #F59E0B;
+          }
+        }
+
+        .course-card.fire-border {
+            border: 2px solid #F59E0B;
+            animation: fire-border 2s infinite;
+        }
+</style>
+<body>
+   <nav class="mynavtop">
+      <div class="container">
+         <nav class="navbar mb-0" role="navigation">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+               <ul class="nav navbar-nav mainmenu">
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <b class="caret"></b></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">Menu1</a></li>
+                        <li><a href="#">Menu1</a></li>
+                        <li><a href="#">Menu1</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">CÁC KHÓA HỌC</a></li>
+                  <li><a href="giangvien.html">GIẢNG VIÊN</a></li>
+                  <li><a href="tintuc.html">TIN TỨC - SỰ KIỆN</a></li>
+                  <li><a href="#">THƯ VIỆN</a></li>
+                  <li><a href="#">KHẢO SÁT</a></li>
+
+               </ul>
+
+               <ul class="nav navbar-nav navbar-right mb-10">
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle changelanguage_en" data-toggle="dropdown">English <b
+                           class="caret"></b></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#" class="changelanguage_vn">Tiếng Việt</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="dang-nhap.html" class="btn-login">Đăng nhập</a></li>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </nav>
+
+      </div>
+   </nav>
+   <section class="whitebg">
+   <div class="container" id="banner">
+      <div class="logo">
+         <a href="#1"><img src="imgs/logo.png"></a>
+      </div>
+      <div class="header-right">
+         <h1>CỔNG THÔNG TIN ĐÀO TẠO TRỰC TUYẾN CỦA CỤC SỞ HỮU TRÍ TUỆ</h1>
+         <form method="POST">
+            <div class="searchbox"><input class="textsearch" type="text" placeholder="Tìm kiếm khoá học...">
+               <input class="btnsubmit" type="submit" value="Tìm kiếm"></div>
+         </form>
+      </div>
+   </div>
+   </section>
+   <div class="swiper-container gallery-top">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide" style="background-image:url(images/banner1.jpg)">
+         </div>
+         <div class="swiper-slide" style="background-image:url(images/banner4.jpg)">
+         </div>
+         <div class="swiper-slide" style="background-image:url(images/banner3.jpg)">
+         </div>
+      </div>
+      <!-- Add Arrows -->
+   </div>
+   <section class="whitebg pb-1">
+      <div class="container relative">
+         <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide" style="background:#EFEFEF">
+                  Phòng học trực tuyến
+               </div>
+               <div class="swiper-slide" style="background:#EFEFEF">
+                  Các khóa học cơ bản
+               </div>
+               <div class="swiper-slide" style="background:#EFEFEF">
+                  Các khóa học nâng cao
+               </div>
+               <div class="swiper-slide" style="background:#EFEFEF">
+                  Các khóa học khác
+               </div>
+            </div>
+
+         </div>
+         <div class="swiper-button-next swiper-button-white"></div>
+         <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+   </section>
+
+   <!-- Swiper JS -->
+   <script src="js/swiper-bundle.min.js"></script>
+
+   <!-- Initialize Swiper -->
+   <script>
+      var galleryThumbs = new Swiper('.gallery-thumbs', {
+         spaceBetween: 10,
+         slidesPerView: 3,
+         loop: true,
+         freeMode: true,
+         //loopedSlides: 5, //looped slides should be the same
+         watchSlidesVisibility: true,
+         watchSlidesProgress: true,
+         breakpoints: {
+            320: {
+               slidesPerView: 1,
+               spaceBetween: 20
+            },
+            480: {
+               slidesPerView: 2,
+               spaceBetween: 30
+            },
+            860: {
+               slidesPerView: 3,
+               spaceBetween: 40
+            }
+         }
+      });
+      var galleryTop = new Swiper('.gallery-top', {
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+         },
+         //loopedSlides: 5, //looped slides should be the same
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+         thumbs: {
+            swiper: galleryThumbs,
+         },
+         pagination: {
+            el: '.swiper-pagination',
+         },
+      });
+   </script>
+   <section class="graybg pt-5 pb-3">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3 col-sm-6">
+               <div class="boxcolor1 text-center mb-3">
+                  <div class="icon">
+                     <img src="imgs/phonghoctructuyen.svg" />
+                  </div>
+                  <div class="text">
+                     Phòng học trực tuyến
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3  col-sm-6">
+               <div class="boxcolor2 text-center mb-3">
+                  <div class="icon">
+                     <img src="imgs/cackhoacoban.svg" />
+                  </div>
+                  <div class="text">
+                     Các khóa cơ bản
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3  col-sm-6">
+               <div class="boxcolor3 text-center mb-3">
+                  <div class="icon">
+                     <img src="imgs/cackhoanangcao.svg" />
+                  </div>
+                  <div class="text">
+                     Các khóa nâng cao
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3  col-sm-6">
+               <div class="boxcolor4 text-center mb-3">
+                  <div class="icon">
+                     <img src="imgs/hocviencanbiet.svg" />
+                  </div>
+                  <div class="text">
+                     Học viên cần biết
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <script>
+      $(document).ready(function () {
+         var date = new Date();
+         var d = date.getDate();
+         var m = date.getMonth();
+         var y = date.getFullYear();
+         /*  className colors
+           
+         className: default(transparent), important(red), chill(pink), success(green), info(blue)
+           
+         */
+         /* initialize the external events
+         -----------------------------------------------------------------*/
+         $('#external-events div.external-event').each(function () {
+            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // it doesn't need to have a start or end
+            var eventObject = {
+               title: $.trim($(this).text()) // use the element's text as the event title
+            };
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data('eventObject', eventObject);
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+               zIndex: 999,
+               revert: false, // will cause the event to go back to its
+               revertDuration: 0 //  original position after the drag
+            });
+         });
+         /* initialize the calendar
+         -----------------------------------------------------------------*/
+         var calendar = $('#calendar').fullCalendar({
+            header: {
+               left: 'title',
+               // center: 'agendaDay,agendaWeek,month',
+               right: 'prev,today,next '
+            },
+            editable: false,
+            firstDay: 0, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+            selectable: false,
+            defaultView: 'month',
+            axisFormat: 'h:mm',
+            columnFormat: {
+               month: 'ddd', // Mon
+               week: 'ddd d', // Mon 7
+               day: 'dddd M/d', // Monday 9/7
+               agendaDay: 'dddd d'
+            },
+            titleFormat: {
+               month: 'MMMM yyyy', // September 2009
+               week: "MMMM yyyy", // September 2009
+               day: 'MMMM yyyy' // Tuesday, Sep 8, 2009
+            },
+            allDaySlot: false,
+            selectHelper: true,
+            select: function (start, end, allDay) {
+               var title = prompt('Event Title:');
+               if (title) {
+                  calendar.fullCalendar('renderEvent', {
+                     title: title,
+                     start: start,
+                     end: end,
+                     allDay: allDay
+                  },
+                     false // make the event "stick"
+                  );
+               }
+               calendar.fullCalendar('unselect');
+            },
+            droppable: false, // this allows things to be dropped onto the calendar !!!
+            drop: function (date, allDay) { // this function is called when something is dropped
+               // retrieve the dropped element's stored Event Object
+               var originalEventObject = $(this).data('eventObject');
+               // we need to copy it, so that multiple events don't have a reference to the same object
+               var copiedEventObject = $.extend({}, originalEventObject);
+               // assign it the date that was reported
+               copiedEventObject.start = date;
+               copiedEventObject.allDay = allDay;
+               // render the event on the calendar
+               // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+               $('#calendar').fullCalendar('renderEvent', copiedEventObject, false);
+               // is the "remove after drop" checkbox checked?
+               if ($('#drop-remove').is(':checked')) {
+                  // if so, remove the element from the "Draggable Events" list
+                  $(this).remove();
+               }
+            },
+            events: [
+               {
+                  id: 999,
+                  title: 'Khóa học 1',
+                  start: new Date(y, m, d - 3, 16, 0),
+                  allDay: false,
+                  className: 'info'
+               },
+               {
+                  id: 123,
+                  title: 'Khóa học 2',
+                  start: new Date(y, m, 28),
+                  end: new Date(y, m, 28),
+                  className: 'info'
+               },
+               {
+                  title: 'Khóa học 3',
+                  start: new Date(y, m, d, 10, 30),
+                  allDay: false,
+                  className: 'important'
+               },
+               {
+                  title: 'Khóa học 4',
+                  start: new Date(y, m, d, 12, 0),
+                  end: new Date(y, m, d, 14, 0),
+                  allDay: false,
+                  className: 'important'
+               },
+               {
+                  title: 'Khóa học nâng cao tiếng Anh',
+                  start: new Date(y, m, d + 1, 19, 0),
+                  end: new Date(y, m, d + 1, 22, 30),
+                  allDay: false,
+               },
+               {
+                  title: 'Demo đường dẫn',
+                  start: new Date(y, m, 28),
+                  end: new Date(y, m, 28),
+                  url: 'https://google.com',
+                  className: 'success'
+               }
+            ],
+         });
+      });
+   </script>
+   <section class="whitebg pt-3 pb-5">
+      <div class="container relative">
+         <div class="titleline">
+            <h4>CÁC KHÓA HỌC MỚI</h4><span class="line"></span>
+         </div>
+         <div class="khoahocmoi-control">
+            <div class="area-control">
+               <div class="swiper-button-next swiper-button-white"></div>
+               <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+         </div>
+
+
+
+         <div class="swiper-container slidekhoahocmoi pt-4 pb-4 pl-3 pr-3">
+            <div class="swiper-wrapper ">
+               <div class="swiper-slide">
+                  <div class="itemscourse">
+                     <a href="#1" class="imgcourse"><img src="images/kh1.jpg" /><span class="freecourse">Miễn
+                           phí</span></a>
+                     <a href="#1" class="titlecourse">Pha chế cafe barista từ cơ bản đến nâng cao</a>
+                     <div class="btn-area">
+                        <span class="time-duration">
+                           6:43
+                        </span>
+                        <span class="type-course-basic">Khóa học cơ bản</span>
+                        <a class="reg-btn" href="#1">Đăng ký</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="itemscourse">
+                     <a href="#1" class="imgcourse"><img src="images/kh3.jpg" /><span class="freecourse">Miễn
+                           phí</span></a>
+                     <a href="#1" class="titlecourse">Tìm hiểu về cơ chế điều trị một số bệnh do virus thường
+                        gặp</a>
+                     <div class="btn-area">
+                        <span class="time-duration">
+                           26:43
+                        </span>
+                        <span class="type-course-basic">Khóa học cơ bản</span>
+                        <a class="reg-btn" href="#1">Đăng ký</a>
+                     </div>
+                  </div>
+               </div>
+                  <div class="swiper-slide course-card relative bg-white rounded-lg  overflow-hidden fire-border">
+                  <div class="itemscourse" style="border: none;">
+                     <a href="#1" class="imgcourse"><img src="images/kh2.jpg" /></a>
+                     <div class="discount-label custom-label">Giảm 50%</div>
+                     <a href="#1" class="titlecourse">Trí tuệ nhân tạo và ứng dụng thực tiễn</a>
+                     <div class="btn-area">
+                        <span class="time-duration">
+                           16:43
+                        </span>
+                        <span class="type-course-advanced">Khóa học nâng cao</span>
+                        <a class="reg-btn" href="#1">Đăng ký</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="itemscourse">
+                     <a href="#1" class="imgcourse"><img src="images/kh1.jpg" /><span class="freecourse">Miễn
+                           phí</span></a>
+                     <a href="#1" class="titlecourse">Pha chế cafe barista từ cơ bản đến nâng cao</a>
+                     <div class="btn-area">
+                        <span class="time-duration">
+                           6:43
+                        </span>
+                        <span class="type-course-basic">Khóa học cơ bản</span>
+                        <a class="reg-btn" href="#1">Đăng ký</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Add Pagination -->
+
+         </div>
+
+         <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+
+         </div>
+      </div>
+   </section>
+   <div class="container">
+      <div class="titleline">
+         <h4>LỊCH HỌC</h4><span class="line"></span>
+      </div>
+      <div id='calendar'></div>
+      <div class="text-center mt-3 mb-5"><a href="#1" class="btn btn-primary">Tải lịch học</a></div>
+      <div style='clear:both'></div>
+   </div>
+   <section class="whitebg pt-4 pb-5">
+      <div class="container">
+         <div class="titleline">
+            <h4>THỐNG KÊ</h4><span class="line"></span>
+         </div>
+         <div class="row">
+            <div class="col-md-4">
+               <div class="boxgray">
+                  <div><img src="imgs/iconkhoahoc.png"></div>
+                  <div class="number">2345</div>
+                  <div class="title">TỔNG SỐ KHÓA HỌC</div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="boxgray">
+                  <div><img src="imgs/iconchungchi.png"></div>
+                  <div class="number">3456</div>
+                  <div class="title">SỐ HỌC VIÊN HOÀN THÀNH KHÓA HỌC</div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="boxgray">
+                  <div><img src="imgs/iconhocvien.png"></div>
+                  <div class="number">6789</div>
+                  <div class="title">SỐ LƯỢNG HỌC VIÊN</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="menufooter">
+      <div class="container">
+         <a href="#1">Giới thiệu</a>
+         <a href="#1">Các khóa học</a>
+         <a href="#1">Giảng viên</a>
+         <a href="#1">Tin tức - Sự kiện</a>
+         <a href="#1">Thư viện</a>
+         <a href="#1">Khảo sát</a>
+      </div>
+      <div class="chatonline">
+         <a href="#1" title="chat trực tuyến"><img src="imgs/livechat.png" /></a>
+         <a href="#1" title="chat qua Zalo"><img src="imgs/zalochat.png" /></a>
+      </div>
+   </section>
+   <section id="footer" class="graybg">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-sm-12 col-md-2">
+               <div class="logo">
+                  <a href="#1"><img src="imgs/logo.png"></a>
+               </div>
+            </div>
+            <div class="col-sm-7">
+               <div class="mb-3">
+                  <h2 class="mt-0">CỤC SỞ HỮU TRÍ TUỆ</h2>
+                  <h4>Trung tâm Nghiên cứu, Đào tạo và Hỗ trợ, Tư vấn</h4>
+                  <p>Phòng 101 Nhà D, 386 Nguyễn Trãi, Hà Nội</p>
+                  <p>Điện thoại: 024.38583069</p>
+                  <p>Email: hotro@cucsohuu.com.vn</p>
+               </div>
+            </div>
+            <div class="col-sm-5 col-md-3">
+               <select class="lienketweb">
+                  <option selected>Liên kết website</option>
+                  <option value="1">Liên kết 1</option>
+                  <option value="2">Liên kết 2</option>
+                  <option value="3">Liên kết 3</option>
+                  <option value="4">Liên kết 4</option>
+               </select>
+               <div class="counter">
+                  Lượt truy cập: <strong>123456789</strong>
+               </div>
+               <div class="social">
+                  <a href="#1" class="link-facebook mr-5" id="link-facebook" title="Liên kết facebook">facebook</a>
+                  <a href="#1" class="link-youtube" title="Liên kết youtube">youtube</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <script>
+      $(document).ready(function () {
+         $('[data-toggle="tooltip"]').tooltip();
+      });
+      var swiper = new Swiper('.slidekhoahocmoi', {
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+         loop: true,
+         breakpoints: {
+            // when window width is >= 320px
+            320: {
+               slidesPerView: 1,
+               spaceBetween: 20
+            },
+            752: {
+               slidesPerView: 2,
+               spaceBetween: 40
+            },
+            860: {
+               slidesPerView: 3,
+               spaceBetween: 40
+            }
+         }
+      });
+   </script>
+</body>
+<div class="modal fade" id="boxlogin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="modalLabel">Đăng nhập</h4>
+         </div>
+         <div class="modal-body">
+            <form class="form-signin">
+               <span id="reauth-email" class="reauth-email"></span>
+               <p class="input_title">Tài khoản</p>
+               <input type="text" id="inputEmail" class="form-control mb-10" required autofocus>
+               <p class="input_title">Mật khẩu</p>
+               <input type="password" id="inputPassword" class="form-control" required>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Đăng nhập</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+</html>

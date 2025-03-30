@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-elearning</title>
+    <link href="https://e-learning.ipvietnam.gov.vn/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="https://e-learning.ipvietnam.gov.vn/js/jquery-1.11.1.min.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/css/swiper.min.css">
+    <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/css/custom.css">
+    <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/css/calendar.css">
+    <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/plugins/toastr/toastr.min.css">
+    <script src="https://e-learning.ipvietnam.gov.vn/js/jquery.min.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/js/calendar.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/js/custom.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/plugins/toastr/toastr.min.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/plugins/jquery-cookie/src/jquery.cookie.js"></script>
+    <!-- InputMask -->
+    <script src="https://e-learning.ipvietnam.gov.vn/plugins/moment/moment.min.js"></script>
+    <script src="https://e-learning.ipvietnam.gov.vn/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/dist/css/adminlte.min.css"> -->
+
+    </head>
+<style>  .course-card.fire-border {
+    border: 2px solid #F59E0B;
+    animation: fire-border 2s infinite;
+}
+
+.promotion-section {
+    display: flex; /* Sử dụng flexbox để sắp xếp các phần tử con */
+    flex-direction: row; /* Sắp xếp theo chiều ngang */
+    align-items: stretch; /* Căn chỉnh các phần tử theo chiều dọc */
+    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử */
+}
+
+.promotion-title {
+    margin-bottom: 1rem;
+}
+
+.promotion-description {
+    flex: 1; /* Cho phép phần mô tả mở rộng để chiếm không gian còn lại */
+    margin-right: 20px; /* Tạo khoảng cách giữa mô tả và mã QR */
+    justify-content: space-between;
+    display: flex
+;
+    flex-direction: column;
+}
+.promotion-description span{
+    display: flex;  
+}
+.qr-code-wrapper {
+    text-align: center;
+}
+
+.qr-code {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #1d1ab3;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.price-container {
+            margin-top: auto; /* Đẩy giá xuống dưới cùng */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Khoảng cách giữa giá gốc và giá khuyến mãi */
+        }
+
+        .discounted-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #dc2626;
+        }
+
+        .original-price {
+            font-size: 0.9em;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+</style>
+<body>
+    <nav class="mynavtop">
+    <div class="container">
+        <nav class="navbar mb-0" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav mainmenu">
+                                        <li  class="dropdown" >
+                        <a href="https://e-learning.ipvietnam.gov.vn"  class="dropdown-toggle"
+                            data-toggle="dropdown" >GIỚI THIỆU
+                             <b class="caret"></b> </a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a href="https://e-learning.ipvietnam.gov.vn/gioi-thieu-trung-tam">Giới thiệu trung t&acirc;m</a></li>
+                                                        <li><a href="https://e-learning.ipvietnam.gov.vn/chuong-trinh-dao-tao">Chương tr&igrave;nh đ&agrave;o tạo</a></li>
+                                                    </ul>
+                                            </li>
+                                        <li  class="dropdown" >
+                        <a href="https://e-learning.ipvietnam.gov.vn"  class="dropdown-toggle"
+                            data-toggle="dropdown" >C&Aacute;C KHO&Aacute; HỌC
+                             <b class="caret"></b> </a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a href="https://e-learning.ipvietnam.gov.vn/khoa-hoc-co-ban">Kho&aacute; học cơ bản</a></li>
+                                                        <li><a href="https://e-learning.ipvietnam.gov.vn/khoa-hoc-nang-cao">Kho&aacute; học n&acirc;ng cao</a></li>
+                                                    </ul>
+                                            </li>
+                                        <li >
+                        <a href="https://e-learning.ipvietnam.gov.vn/tin-tuc" >TIN TỨC - SỰ KIỆN
+                            </a>
+                                            </li>
+                                        <li >
+                        <a href="https://e-learning.ipvietnam.gov.vn/thu-vien" >THƯ VIỆN
+                            </a>
+                                            </li>
+                                        <li >
+                        <a href="https://e-learning.ipvietnam.gov.vn/giang-vien" >GIẢNG VI&Ecirc;N
+                            </a>
+                                            </li>
+                                        <li >
+                        <a href="https://e-learning.ipvietnam.gov.vn/lien-he" >LI&Ecirc;N HỆ
+                            </a>
+                                            </li>
+                                        <li >
+                        <a href="https://e-learning.ipvietnam.gov.vn/danh-sach-video" >VIDEO
+                            </a>
+                                            </li>
+                    
+                </ul>
+
+                <!-- <ul class="nav navbar-nav navbar-right mb-10 menuright">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle changelanguage_en" data-toggle="dropdown"><b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="changelanguage_vn">&nbsp;</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="dang-nhap.html" class="btn-login mr-5">Đăng nhập</a></li>
+                    <li><a href="dang-nhap.html" class="btn-login">Đăng ký</a></li>
+                </ul> -->
+
+                <ul class="nav navbar-nav navbar-right mb-10 menuright">
+                                        <li class="dropdown" id="language">
+                        <a href="#" class="dropdown-toggle changelanguage_vn" data-toggle="dropdown"><b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://e-learning.ipvietnam.gov.vn/home" class="changelanguage_en">&nbsp;</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/dang-nhap" class="btn-login mr-5">Đăng nhập</a></li>
+                    <li><a href="/dang-ky" class="btn-login">Đăng k&yacute;</a></li>
+                                        <!-- <li><a href="#" class="btn-login" data-toggle="modal" data-target="#boxlogin">Đăng nhập</a></li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+    </div>
+</nav>
+
+<!-- Header và tìm kiếm -->
+<section class="whitebg">
+    <div class="container" id="banner">
+        <div class="logo">
+                        <a href="https://e-learning.ipvietnam.gov.vn/trang-chu"><img src="https://e-learning.ipvietnam.gov.vn/imgs/logo.png"></a>
+                    </div>
+        <div class="header-right">
+            <h1>CỔNG TH&Ocirc;NG TIN Đ&Agrave;O TẠO TRỰC TUYẾN CỦA CỤC SỞ HỮU TR&Iacute; TUỆ</h1>
+                        <form method="POST" action="/tim-kiem">
+                <div class="searchbox">
+                    <input class="textsearch" type="text" placeholder="T&igrave;m kiếm kho&aacute; học..." id="searchInput"
+                        name="searchInput">
+                    <input class="btnsubmit" type="submit" value="Tìm kiếm" id="searchButton">
+                    <!-- <input class="btnsubmit" onclick="Search();" value="Tìm kiếm" id="searchButton"> -->
+                </div>
+            </form>
+                    </div>
+    </div>
+</section>
+<script>
+
+
+</script>
+<!-- <div class="modal fade" id="boxlogin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modalLabel">Đăng nhập</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <p class="input_title">Tài khoản</p>
+                    <input type="text" id="inputEmail" class="form-control mb-10" required autofocus>
+                    <p class="input_title">Mật khẩu</p>
+                    <input type="password" id="inputPassword" class="form-control" required>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+    
+<div class="container mbt-6">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="whitebg menuleft">
+    <div class="panel-group mb-0" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  href="https://e-learning.ipvietnam.gov.vn/trang-chu"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/home.png" /></span>
+                        Trang chủ
+                    </a>
+                </h4>
+            </div>
+                    </div>
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion"
+                        href="#collapse3" aria-expanded="false" aria-controls="collapseThree"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/course.png" /></span>
+                        C&aacute;c kho&aacute; học
+                    </a>
+                </h4>
+            </div>
+                        <div id="collapse3" class="panel-collapse collapse" role="tabpanel"
+                aria-labelledby="headingThree">
+                <div class="panel-body">
+                                        <li><a href="https://e-learning.ipvietnam.gov.vn/khoa-hoc-co-ban">Kho&aacute; học cơ bản</a></li>
+                                        <li><a href="https://e-learning.ipvietnam.gov.vn/khoa-hoc-nang-cao">Kho&aacute; học n&acirc;ng cao</a></li>
+                                    </div>
+            </div>
+                    </div>
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  href="https://e-learning.ipvietnam.gov.vn/lich-hoc"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/calendar.png" /></span>
+                        Lịch Học
+                    </a>
+                </h4>
+            </div>
+                    </div>
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  href="https://e-learning.ipvietnam.gov.vn/giang-vien"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/teacher.png" /></span>
+                        Giảng vi&ecirc;n
+                    </a>
+                </h4>
+            </div>
+                    </div>
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  href="https://e-learning.ipvietnam.gov.vn/hoc-vien-can-biet"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/faq.png" /></span>
+                        Học vi&ecirc;n cần biết
+                    </a>
+                </h4>
+            </div>
+                    </div>
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a  href="https://e-learning.ipvietnam.gov.vn/danh-sach-video"
+                        >
+                        <span class="icon"><img src="https://e-learning.ipvietnam.gov.vn/imgs/khaosat.png" /></span>
+                        Video
+                    </a>
+                </h4>
+            </div>
+                    </div>
+            </div>
+</div>        </div>
+        <div class="col-sm-9">
+            <div class="whitebg p20">
+                                <h2 class="titlepage">Tổng quan về Sở hữu tr&iacute; tuệ năm 2025 (Đợt 1)</h2>
+                <div class="mybreadcrumb">
+                    <a href="https://e-learning.ipvietnam.gov.vn/trang-chu">Trang chủ</a>
+                    <a href="https://e-learning.ipvietnam.gov.vn/khoa-hoc-co-ban/detail/98">Tổng quan về Sở hữu tr&iacute; tuệ năm 2025 (Đợt 1)</a>
+                </div>
+                <div class="news-detail">
+                    <div class="titleline mt-0">
+                        <h4>Mô tả thời gian khóa học</h4><span class="line"></span>
+                    </div>
+                    <p>Thời gian học tập: 4 tuần</br>Thời gian làm bài kiểm tra: 2 tuần</p>
+                    <div class="titleline mt-0">
+                        <h4>Mục tiêu khoá học</h4><span class="line"></span>
+                    </div>
+                    <p>Khóa đào tạo này được tổ chức nhằm các mục tiêu sau:</br>- Nâng cao nhận thức về những khái niệm cơ bản liên quan đến SHTT cũng như tầm quan trọng của SHTT </br>- Giải thích những yếu tố cấu thành sự bảo hộ quyền SHTT</br>- Giới thiệu các điều ước quốc tế điều chỉnh quyền SHTT</br></p>
+
+                    <div class="titleline mt-0">
+                        <h4>Danh sách học phần</h4><span class="line"></span>
+                    </div>
+                    <ul>
+                        <li>Thông tin khoá học</li>
+                                                <li>Học phần 1: Giới thiệu về sở hữu trí tuệ</li>
+                                                <li>Học phần 2: Quyền tác giả</li>
+                                                <li>Học phần 3: Quyền liên quan</li>
+                                                <li>Học phần 4: Nhãn hiệu</li>
+                                                <li>Học phần 5: Chỉ dẫn địa lý</li>
+                                                <li>Học phần 6: Kiểu dáng công nghiệp</li>
+                                                <li>Học phần 7: Sáng chế</li>
+                                                <li>Học phần 8: Các điều ước quốc tế do WIPO quản lý liên quan đến các hệ thống đăng ký quốc tế và PCT Nhãn hiệu, kiểu dáng công nghiệp và sáng chế</li>
+                                                <li>Học phần 9: Cạnh tranh không lành mạnh</li>
+                                                <li>Học phần 10: Bảo hộ giống cây trồng mới</li>
+                                                <li>Học phần 11: Thảo luận và Tóm tắt</li>
+                                                <li>Học phần 12: Sở hữu trí tuệ và mục tiêu phát triển </li>
+                                                <li>Kiểm tra cuối khóa </li>
+                                            </ul>
+
+                    <div class="titleline mt-0">
+                        <h4>Lợi ích của khoá học</h4><span class="line"></span>
+                    </div>
+                    <div>Khóa học giúp người học làm quen với các khái niệm, nguyên tắc và các nhóm lĩnh vực khác nhau của SHTT.</div>
+
+                    <div class="titleline mt-0">
+                        <h4>Yêu cầu tham gia khoá học</h4><span class="line"></span>
+                    </div>
+                    <div>Khóa đào tạo này có ở cấp độ cơ bản, dành cho mọi đối tượng thuộc các chuyên môn khác nhau đều có thể tiếp cận được.</div>
+                    
+                    
+                    <div class="titleline mt-0">
+                        <h4>Thông tin khuyến mãi đặc biệt</h4><span class="line"></span>
+                    </div>
+                    <div class="promotion-section">
+                        <div class="promotion-description">
+                            <span >Đăng ký ngay hôm nay để nhận ưu đãi giảm giá 50% cho tất cả các khóa học.  Chương trình khuyến mãi đặc biệt này chỉ áp dụng cho 100 người đăng ký đầu tiên.  Đừng bỏ lỡ cơ hội nâng cao kiến thức với mức giá ưu đãi nhất!</span>
+                            <div class="price-container">
+                                <span class="discounted-price">Giá chỉ từ: 75.000 VNĐ - 150.000 VNĐ</span>
+                                <span class="original-price">Giá gốc: 150.000 VNĐ - 300.000 VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="qr-code-wrapper">
+                            <img src="https://placehold.co/150x150/EEE/31343C?text=QR+Code" alt="Mã QR Khuyến mãi" class="qr-code">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-md-offset-3">
+                                                        <div class="formdangky" style="display:none;">
+                                                                                                        <div class="titledangky">GÓC TƯ VẤN</div>
+                                    <form id="formAdvisory">
+                                        <div class="form-group row">
+                                            <label for="username" class="col-sm-4 col-form-label text-right">Họ
+                                                tên</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="username" placeholder="Họ tên">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="phone" class="col-sm-4 col-form-label text-right">Số điện
+                                                thoại</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="email" class="col-sm-4 col-form-label text-right">Email</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="subtitle">
+                                            <h4>Thông tin khác</h4>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="content" class="col-sm-4 col-form-label text-right">Nội
+                                                dung</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="content" class="form-control">
+                                            </div>
+                                        </div>
+
+                                                                                <div class="form-group row">
+                                            <label for="g-recaptcha-response" class="col-sm-1 col-form-label text-right"></label>
+                                            <div class="col-sm-11">
+                                                <div class="g-recaptcha" data-sitekey="6LcJiOUZAAAAAMSOoIk89CIpC2HVE5-S-02iMFn0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-right">
+                                            <button class="btn btn-primary" type="submit" onclick="CreateAdvisory(); return false;">Gửi</button>
+                                        </div>
+                                    </form>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <section id="menufooter">
+    <div class="container">
+                <a href="https://e-learning.ipvietnam.gov.vn">Giới thiệu</a>
+                <a href="https://e-learning.ipvietnam.gov.vn/tin-tuc">Tin Tức - Sự Kiện</a>
+                <a href="https://e-learning.ipvietnam.gov.vn/thu-vien">Thư Viện</a>
+                <a href="https://e-learning.ipvietnam.gov.vn/giang-vien">Giảng vi&ecirc;n</a>
+                <a href="https://e-learning.ipvietnam.gov.vn/lien-he">Li&ecirc;n hệ</a>
+            </div>
+    <!-- <div class="chatonline">
+        <a href="#1" title="chat trực tuyến"><img src="https://e-learning.ipvietnam.gov.vn/imgs/livechat.png" /></a>
+        <a href="#1" title="chat qua Zalo"><img src="https://e-learning.ipvietnam.gov.vn/imgs/zalochat.png" /></a>
+    </div> -->
+</section>
+<section id="footer" class="graybg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-2">
+                <div class="logo">
+                                        <a href="https://e-learning.ipvietnam.gov.vn/trang-chu"><img src="https://e-learning.ipvietnam.gov.vn/imgs/logo.png"></a>
+                                    </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="mb-3">
+                    <h2 class="mt-0"> CỤC SỞ HỮU TR&Iacute; TUỆ</h2>
+                    <h4>Trung t&acirc;m Nghi&ecirc;n cứu, Đ&agrave;o tạo v&agrave; Hỗ trợ, Tư vấn</h4>
+                    <p>Ph&ograve;ng 101 Nh&agrave; D, 386 Nguyễn Tr&atilde;i, H&agrave; Nội</p>
+                    <p>Điện thoại: </p>
+                    <p>Email: https://www.facebook.com/IPeleaning/</p>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-3">
+                <select class="lienketweb" onchange="gotoUrl(this.options[this.selectedIndex].value)">
+                    <option selected value="0">Liên kết website</option>
+                                        <option value="http://www.noip.gov.vn/">Cục Sở hữu tr&iacute; tuệ</option>
+                                        <option value="https://www.most.gov.vn/">Bộ Khoa học v&agrave; C&ocirc;ng nghệ</option>
+                                        <option value="http://www.cov.gov.vn/">Cục Bản quyền t&aacute;c giả</option>
+                                        <option value="https://www.wipo.int/portal/en/index.html">Tổ chức Sở hữu tr&iacute; tuệ thế giới</option>
+                                    </select>
+                <div class="counter">
+                    Lượt truy cập: <strong id="accessCount"></strong>
+                </div>
+                <div class="social">
+                                        <a href=" https://www.facebook.com/" class="link-facebook mr-5" id="link-facebook"
+                        title="Liên kết facebook"> Facebook</a>
+                                        <a href=" https://www.youtube.com/" class="link-youtube mr-5" id="link-youtube"
+                        title="Liên kết facebook"> Youtube</a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+$(document).ready(function() {
+    GetAccsessCount()
+});
+
+function GetAccsessCount() {
+    var parts = window.location.href.split('/');
+
+    var host = parts[0] + '//' + parts[2] + '/';
+
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        async: true,
+        url: host + 'get-access-count',
+        success: function(result) {
+            document.getElementById("accessCount").innerHTML = result;
+        },
+        error: function(xhr, stats, eror) {
+            // toastr.error(eror);
+            console.log(eror);
+        }
+    });
+}
+
+function gotoUrl(url) {
+    if (url != "0") {
+        window.open(url);
+    }
+}
+</script>
+    <script>
+    $(document).ready(function() {
+        //$('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+
+    
+    <script type="text/javascript">
+        var parts = window.location.href.split('/');
+
+        var host = parts[0] + '//' + parts[2];
+
+        function CreateAdvisory() {
+            if ($("#username").val() == null || $("#username").val() == "") {
+                toastr.warning("Chưa nhập tên người dùng");
+                $("#username").focus();
+                return false;
+            }
+            if ($("#phone").val() == null || $("#phone").val() == "") {
+                toastr.warning("Chưa nhập số điện thoại");
+                $("#phone").focus();
+                return false;
+            }
+            if ($("#email").val() == null || $("#email").val() == "") {
+                toastr.warning("Chưa nhập email");
+                $("#email").focus();
+                return false;
+            }
+            if ($("#g-recaptcha-response").val() == null || $("#g-recaptcha-response").val() == "") {
+                toastr.warning("Chưa xác minh reCaptcha");
+                $("#g-recaptcha-response").focus();
+                return false;
+            }
+
+            var parammeter = {
+                courseid: parts[5],
+                username: $("#username").val(),
+                phone: $("#phone").val(),
+                email: $("#email").val(),
+                content: $("#content").val(),
+                token: $("#g-recaptcha-response").val()
+            };
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                async: true,
+                url: host + '/create-advisory',
+                dataType: 'json',
+                data: parammeter,
+                success: function(result) {
+                    if (result) {
+                        if (result.success == true) {
+                            toastr.success(result.message);
+                            location.reload();
+                        } else {
+                            toastr.warning(result.message);
+                        }
+                    }
+                },
+                error: function(xhr, stats, eror) {
+                    toastr.error("Lỗi kết nối");
+                }
+            });
+            return false;
+        }
+    </script>
+    </body>
+<!-- Zalo -->
+
+
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="102234398479372"
+  logged_in_greeting="Tôi có thể giúp gì cho bạn?"
+  logged_out_greeting="Tôi có thể giúp gì cho bạn?">
+      </div>
+
+</html>
