@@ -26,7 +26,7 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://e-learning.ipvietnam.gov.vn/dist/css/adminlte.min.css"> -->
-
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     .mybreadcrumb {
@@ -125,6 +125,68 @@
     .rating-text {
         font-size: 1.3em;
     }
+
+    
+    .testimonial-section {
+            background-color: #f7fafc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .testimonial-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-rating .star {
+            width: 20px;
+            height: 20px;
+            margin: 0 2px;
+             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F59E0B' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-star'%3E%3Cpath d='M12 2l3.09 6.26 6.91.9-5.24 5.04 1.18 6.88L12 16.63l-5.94 3.81 1.18-6.88-5.24-5.04 6.91-.9z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+        }
+
+        .testimonial-description {
+            font-size: 0.9rem;
+            color: #718096;
+        }
 </style>
 
 <body>
@@ -442,7 +504,7 @@
                                     class="qr-code">
                             </div>
                         </div>
-
+                        
 
                         <div class="row">
                             <div class="col-sm-6 col-md-6 col-md-offset-3">
@@ -499,6 +561,54 @@
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="testimonial-section">
+                    <h2 class="testimonial-title">Đánh giá từ người nổi tiếng</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="testimonial-card">
+                            <img src="https://placehold.co/100x100/EEE/31343C" alt="Avatar của người nổi tiếng 1" class="testimonial-avatar">
+                            <h3 class="testimonial-name">Nguyễn Văn A</h3>
+                            <div class="testimonial-rating">
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                            </div>
+                            <p class="testimonial-description">
+                                "Tôi đã học được rất nhiều điều bổ ích từ khóa học này. Nội dung được trình bày rõ ràng, dễ hiểu, giảng viên nhiệt tình giải đáp thắc mắc. Tôi đánh giá 5 sao cho chất lượng của khóa học."
+                            </p>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://placehold.co/100x100/EEE/31343C" alt="Avatar của người nổi tiếng 2" class="testimonial-avatar">
+                            <h3 class="testimonial-name">Trần Thị B</h3>
+                            <div class="testimonial-rating">
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                            </div>
+                            <p class="testimonial-description">
+                                "Khóa học này thực sự tuyệt vời! Tôi đã có thể áp dụng những kiến thức học được vào công việc của mình một cách hiệu quả. Cảm ơn đội ngũ giảng viên đã tạo ra một khóa học chất lượng như vậy."
+                            </p>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://placehold.co/100x100/EEE/31343C" alt="Avatar của người nổi tiếng 3" class="testimonial-avatar">
+                            <h3 class="testimonial-name">Lê Hoàng C</h3>
+                            <div class="testimonial-rating">
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                            </div>
+                            <p class="testimonial-description">
+                                "Đây là một trong những khóa học trực tuyến tốt nhất mà tôi từng tham gia. Nội dung được cập nhật liên tục, bài tập thực hành đa dạng, giúp tôi nắm vững kiến thức một cách nhanh chóng. Highly recommend!"
+                            </p>
                         </div>
                     </div>
                 </div>
