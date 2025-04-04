@@ -73,10 +73,74 @@
     src: url('../fonts/Plus_Jakarta_Sans/PlusJakartaSans-SemiBold.ttf') format('truetype');
 }
 
+/* font mono */
+@font-face {
+    font-family: "Montserrat Bold";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat BoldItalic";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat ExtraLight";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: "Montserrat Medium";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat SemiBold";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Montserrat Thin";
+    font-style: normal;
+    font-display: fallback;
+    src: url('../fonts/Montserrat/static/Montserrat-Thin.ttf') format('truetype');
+}
+
 body {
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 16px;
-    line-height: 1;
+    line-height: 19.2px;
     color: var(--dark-1);
 }
 
@@ -91,7 +155,63 @@ body {
 .div-event-item .accordion-item:last-child .accordion-inner {
     border-top: none
 }
+.nav-blog{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+/* breadcrumb */
+.breadcrumb-container {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /* padding: 10px 20px 10px px; */
+    padding-top: 10px;
+    /* background: rgba(255, 255, 255, 0.8); */
+    border-radius: 5px;
+    font-size: 16px;
+    width: fit-content;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: #0d5a00;
+    font-weight: bold;
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin: 0 8px;
+    color: #6c757d;
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+.breadcrumb li:last-child a {
+    color: #2a2d30;
+    font-weight: normal;
+    pointer-events: none;
+}
+/* end breadcrumb */
 .div-event-item .btn-show-more .accordion-head {
     border-radius: 50px;
     background: #0D5A00;
@@ -118,7 +238,7 @@ body {
 
 .div-event-item .btn-show-more .accordion-head h6 {
     color: #FFF;
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 11px;
     font-style: normal;
     font-weight: 800;
@@ -134,7 +254,7 @@ body {
 }
 
 .nk-menu-main>li>.nk-menu-link {
-    font-family: "Plus Jakarta Sans SemiBold";
+    font-family: "Montserrat SemiBold";
     font-weight: 500;
     letter-spacing: -0.01rem;
 }
@@ -161,7 +281,8 @@ body {
     background-position: center;
 }
 
-.slider-banner .slider-banner-item, .slider-banner-mb .slider-banner-item {
+.slider-banner .slider-banner-item,
+.slider-banner-mb .slider-banner-item {
     position: relative;
     width: 100%;
     height: 100%;
@@ -181,7 +302,7 @@ body {
 
 .title-big {
     font-size: 48px;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
@@ -241,7 +362,7 @@ body {
 
 .div-objective-text {
     color: #000;
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -250,11 +371,13 @@ body {
 
     padding: 46px;
 }
-
+.icon-langue:hover{
+    opacity: 0.5;
+}
 .div-objective-number {
     color: var(--green-1);
     text-align: justify;
-    font-family: "Plus Jakarta Sans ExtraLight";
+    font-family: "Montserrat ExtraLight";
     font-size: 64px;
     font-style: normal;
     font-weight: 200;
@@ -305,7 +428,7 @@ body {
 
 .div-project-key span {
     color: #FFF;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -378,7 +501,7 @@ body {
 .div-outcomes-content .title-outcomes {
     color: #565656;
     text-align: center;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -386,7 +509,7 @@ body {
 }
 
 .div-outcomes-content .des-outcomes {
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     color: #565656;
     text-align: center;
     font-size: 14px;
@@ -416,7 +539,7 @@ body {
 .title-key-partner span {
     color: var(--green-1);
     text-align: center;
-    font-family: "Plus Jakarta Sans Light";
+    font-family: "Montserrat Light";
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
@@ -476,7 +599,7 @@ body {
 
 .div-key-partners .key50 span {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans Light";
+    font-family: "Montserrat Light";
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
@@ -495,7 +618,7 @@ body {
 
 .footer-content span.title-footer {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -504,7 +627,7 @@ body {
 
 .footer-content span.title-footer-2 {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -520,13 +643,22 @@ body {
 
 .info-footer .contact-ft {
     color: #231F20;
-    font-family: "Plus Jakarta Sans Light";
+    font-family: "Montserrat Light";
     font-size: 14px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
 }
-
+.header-main{
+    background: #0d5a00;
+    color: white;
+}
+.header-main .nk-menu-main .nk-menu-link{
+    color:white;
+}
+.header-main .nk-menu-main .nk-menu-link:hover, .nk-menu-main .nk-menu-link:focus{
+    color:#28ff04;
+}
 .footer .footer-contact {
     display: flex;
     flex-direction: column;
@@ -537,7 +669,7 @@ body {
 
 .footer .footer-contact span {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -556,7 +688,7 @@ body {
 
 .info-footer .ft-contact-high {
     color: var(--s1-p2, #231F20);
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -638,6 +770,12 @@ body {
     gap: 50px;
 }
 
+.content-footer {
+    padding-top: 0.5rem;
+    display: flex;
+    gap: 30px;
+}
+
 .div-research-item .accordion,
 .div-research-item .accordion-item:last-child .accordion-inner {
     border: none;
@@ -655,7 +793,7 @@ body {
 .research-studies .div-research-content span {
     color: #FFF;
     text-align: center;
-    font-family: "Plus Jakarta Sans SemiBold";
+    font-family: "Montserrat SemiBold";
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
@@ -698,7 +836,7 @@ body {
 
 .research-content .content-title h5 {
     color: #000;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -707,7 +845,7 @@ body {
 
 .research-content .research-des {
     color: #000;
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -721,24 +859,29 @@ body {
 
 .div-research-item .btn-show-more .accordion-head h6 {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 11px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
 }
-.banner-mb{
+
+.banner-mb {
     display: none;
 }
-.banner-pc{
+
+.banner-pc {
     display: block;
 }
-.br-mb{
+
+.br-mb {
     display: block;
 }
-.br-pc{
+
+.br-pc {
     display: none;
 }
+
 a.accordion-head:hover {
     opacity: 0.7;
 }
@@ -793,6 +936,11 @@ a.accordion-head:hover {
     width: 100%;
 }
 
+.icon-langue {
+    width: 25px;
+    height: 25px;
+}
+
 .workshop-content {
     display: flex;
     padding: 0px 15px;
@@ -805,7 +953,7 @@ a.accordion-head:hover {
 .workshop-content h5 {
     color: #565656;
     text-align: center;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -830,7 +978,7 @@ a.accordion-head:hover {
 
 .workshop-info-item span {
     color: #565656;
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -877,7 +1025,7 @@ a.accordion-head:hover {
 
 .text-banner span {
     color: #FFF;
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 48px;
     font-style: normal;
     font-weight: 800;
@@ -891,7 +1039,7 @@ a.accordion-head:hover {
 
 .div-load-more span {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -924,7 +1072,7 @@ a.accordion-head:hover {
 
 .div-materials-content span {
     color: #FFF;
-    font-family: "Plus Jakarta Sans Medium";
+    font-family: "Montserrat Medium";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -940,7 +1088,7 @@ a.accordion-head:hover {
 
 .materials-info {
     color: #FFF;
-    font-family: "Plus Jakarta Sans Medium";
+    font-family: "Montserrat Medium";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -980,7 +1128,7 @@ a.accordion-head:hover {
 .network .circle-network span {
     color: #FFF;
     text-align: center;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -1082,7 +1230,7 @@ a.accordion-head:hover {
 .logo-network-list .title-logo-network span {
     color: #FFF;
     text-align: center;
-    font-family: "Plus Jakarta Sans Light";
+    font-family: "Montserrat Light";
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
@@ -1125,7 +1273,7 @@ a.accordion-head:hover {
 .div-title-search .title-search h3 {
     color: #FFF;
     text-align: center;
-    font-family: "Plus Jakarta Sans Light";
+    font-family: "Montserrat Light";
     font-size: 48px;
     font-style: normal;
     font-weight: 300;
@@ -1243,7 +1391,7 @@ a.accordion-head:hover {
 
 .enterprise-content .enterprise-title {
     color: #000;
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -1252,7 +1400,7 @@ a.accordion-head:hover {
 
 .enterprise-content .enterprise-des {
     color: #000;
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1318,7 +1466,7 @@ a.accordion-head:hover {
 .experts-title {
     color: #000;
     text-align: center;
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 24px;
     font-style: normal;
     font-weight: 800;
@@ -1352,7 +1500,7 @@ a.accordion-head:hover {
 
 .roadmap-content .title-roadmap {
     color: #0D4E03;
-    font-family: "Plus Jakarta Sans Medium";
+    font-family: "Montserrat Medium";
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
@@ -1362,7 +1510,7 @@ a.accordion-head:hover {
 
 .roadmap-content .des-roadmap {
     color: #051E01;
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -1373,7 +1521,7 @@ a.accordion-head:hover {
 .feature-title {
     color: #0D4E03;
     text-align: center;
-    font-family: "Plus Jakarta Sans Medium";
+    font-family: "Montserrat Medium";
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
@@ -1426,7 +1574,7 @@ a.accordion-head:hover {
     color: #565656;
 
     /* s4 */
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -1435,7 +1583,7 @@ a.accordion-head:hover {
 
 .div-event-content-title span {
     color: #282727;
-    font-family: "Plus Jakarta Sans SemiBold";
+    font-family: "Montserrat SemiBold";
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -1448,7 +1596,7 @@ a.accordion-head:hover {
     text-align: justify;
 
     /* s33 */
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1662,7 +1810,7 @@ img {
 
 .ee-detail-container-title span {
     color: var(--Neutral-1, #303030);
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 30px;
     font-style: normal;
     font-weight: 800;
@@ -1685,7 +1833,7 @@ img {
 
 .ee-detail-container .detail-date span {
     color: var(--black, #303030);
-    font-family: "Plus Jakarta Sans SemiBold";
+    font-family: "Montserrat SemiBold";
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -1693,7 +1841,7 @@ img {
 }
 
 .ee-detail-container .detail-des {
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     color: var(--black, #303030);
     font-size: 16px;
     font-style: normal;
@@ -1711,7 +1859,7 @@ img {
 
 .ee-detail-container .detail-content p {
     color: var(--black, #303030);
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -1771,7 +1919,7 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
 .btn-submit-send span {
     color: #fff;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -1781,7 +1929,7 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
 .info-contact .title-big {
     color: var(--green-1);
-    font-family: "Plus Jakarta Sans ExtraBold";
+    font-family: "Montserrat ExtraBold";
     font-size: 24px;
     font-style: normal;
     font-weight: 800;
@@ -1792,7 +1940,7 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
 .contact-map h5 {
     color: #000;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 18px;
     font-style: normal;
     font-weight: 800;
@@ -1800,14 +1948,14 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 .contact-map span {
-    font-family: "Plus Jakarta Sans Regular";
+    font-family: "Montserrat Regular";
     font-weight: 400;
 }
 
 .ongoing {
     color: #FFF;
     text-align: center;
-    font-family: "Plus Jakarta Sans Bold";
+    font-family: "Montserrat Bold";
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
@@ -1815,6 +1963,33 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
     position: absolute;
 }
+.detail-blog p {
+    font-size: 16px;
+    font-family: 'Montserrat Regular';
+    line-height: 1.5rem;
+
+}
+.banner-blog {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+
+.banner-blog img {
+    width: 100%;
+    height: auto;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-image: url('../images/banner-blog.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
 @media (max-width: 1366px) {
     .text-banner span {
         font-size: 40px;
@@ -1825,6 +2000,7 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
     .text-banner span {
         font-size: 35px;
     }
+
     .div-materials-item {
         padding: 30px 35px
     }
@@ -1859,24 +2035,30 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 @media (max-width: 992px) {
-    .banner-mb{
+   
+    .banner-mb {
         display: block;
     }
-    .banner-pc{
+
+    .banner-pc {
         display: none;
     }
-    .br-mb{
+
+    .br-mb {
         display: none;
     }
-    .br-pc{
+
+    .br-pc {
         display: block;
     }
+
     .text-banner span {
         left: 5%;
-        width: 100%;
+        width: 90%;
         top: 12%;
         font-size: 30px;
     }
+
     .div-materials-image {
         position: absolute;
         width: 50%;
@@ -2012,9 +2194,11 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 @media (max-width: 768.98px) {
+
     .text-banner span {
         font-size: 27px;
     }
+
     .esco-roadmap {
         flex-direction: column;
     }
@@ -2121,9 +2305,20 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
 
 @media (max-width: 575.89px) {
+    .breadcrumb-container {
+        top: 10px;
+    }
+    .breadcrumb {
+        font-size: 14px;
+    }
+    .content-footer {
+        display: contents;
+    }
+
     .text-banner span {
         font-size: 25px;
     }
+
     .div-materials-item {
         margin-top: 80px;
     }
@@ -2233,7 +2428,8 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 }
 
 @media (min-width: 992.8px) {
-    
+   
+
 
     .nk-header .nk-menu-main>li.nk-menu-item.active>.nk-menu-link:before,
     .nk-header .nk-menu-main>li.nk-menu-item.current-menu>.nk-menu-link:before {
@@ -2246,10 +2442,15 @@ div.dataTables_wrapper div.dataTables_filter input:focus,
 
     .header-enger .nk-menu-main.nk-menu {
         padding: 0 0 0 2rem;
+        display: flex;
     }
 
     .header-enger .nk-menu-main>li.nk-menu-item>.nk-menu-link {
         padding: 1.95rem 0;
+        font-size: 16px;
+    }
+    .header-main .nk-menu-main>li.nk-menu-item>.nk-menu-link {
+        padding: 0.95rem 0;
         font-size: 16px;
     }
 }
