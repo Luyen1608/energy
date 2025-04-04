@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'architectureregular';
+    src: url('../fonts/architep.woff2') format('woff2'),
+        url('../fonts/architep.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.font-time {font-family: 'Times New Roman', Times, serif;}
+@font-face {
+    font-family: 'utm_avoregular';
+    src: url('../fonts/utm_avo.woff2') format('woff2'),
+        url('../fonts/utm_avo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.contentcertificates {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-style: normal;
+    background: #fff;
+}
+
+.font-title {
+    font-family: utm_avoregular;
+    font-size: 24px;
+    line-height: 40px;
+    color: black;
+}
+
+.font-noidung {
+    font-family: architectureregular;
+    font-size: 30px;
+}
+
+body {
+    background: #fff;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: #931111;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.h3 {
+    font-weight: normal;
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    padding: .5cm;
+}
+
+.font1 {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+.font2 {
+    font-size: 24px
+}
+
+.font3 {
+    font-size: 26px
+}
+
+.font4 {
+    font-size: 20px;
+}
+
+.font5 {
+    font-size: 22px
+}
+
+.border {
+    background: url('../imgs/border.svg') no-repeat;
+    background-size: contain;
+    height: 20cm;
+    text-align: center;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+}
+
+page[size="A4"][layout="landscape"] {
+    width: 29.7cm;
+   /* height: 21cm; */
+}
+
+td {
+    vertical-align: top;
+}
+
+.header-print {
+    width: 100%;
+    padding-top: 1.6cm
+}
+
+.textcontain {
+    width: 100%;
+    text-align: left;
+}
+
+.body-print {
+    background: url('../imgs/logo_.png') no-repeat center bottom;
+    background-size: contain;
+    height: 12cm;
+}
+
+.SoGCN {
+    position: absolute;
+    bottom: 2.5cm;
+    left: 2cm;
+}
+.ChuKy {
+    position: absolute;
+    bottom: 2.5cm;
+    right: 2cm;
+    font-family: utm_avoregular;
+}
+.line-border {
+    height: 2px;
+    background: #333;
+    width: 6cm;
+    display: inline-block;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.font-w100 {
+    font-weight: 100;
+}
+.bold {font-weight: 600;}
+@media print {
+
+    body,
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
