@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chứng chỉ</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'architectureregular';
+            src: url('fonts/architep.woff2') format('woff2'),
+                url('fonts/architep.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+        .dancing-script-title {
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .font-time {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        @font-face {
+            font-family: 'utm_avoregular';
+            src: url('fonts/utm_avo.woff2') format('woff2'),
+                url('fonts/utm_avo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+        .font-title {
+            font-family: utm_avoregular;
+            font-size: 24px;
+            line-height: 40px;
+        }
+
+        .font-noidung {
+            font-family: architectureregular;
+            font-size: 30px;
+        }
+
+        body {
+            background: rgb(204, 204, 204);
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 45px;
+            color: #931111;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .h3 {
+            font-weight: normal;
+        }
+
+        page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            padding: .5cm;
+        }
+
+        .font1 {
+            font-size: 28px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        .font2 {
+            font-size: 24px
+        }
+
+        .font3 {
+            font-size: 26px
+        }
+
+        .font4 {
+            font-size: 20px;
+        }
+
+        .font5 {
+            font-size: 14px
+        }
+
+        .border {
+            background: url('images/Certificate1.png') no-repeat;
+            background-size: contain;
+            height: 20cm;
+            text-align: center;
+            -webkit-print-color-adjust: exact;
+            position: relative;
+        }
+
+        page[size="A4"][layout="landscape"] {
+            width: 29.7cm;
+            /* height: 21cm; */
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .header-print {
+            width: 100%;
+            padding-top: 1.6cm
+        }
+
+        .textcontain {
+            width: 100%;
+            text-align: left;
+            padding-top: 9cm;
+        }
+
+        .SoGCN {
+            position: absolute;
+            bottom: 3.5cm;
+            left: 6.5cm;
+        }
+
+        .ChuKy {
+            position: absolute;
+            bottom: 2.64cm;
+            right: 6cm;
+            font-family: utm_avoregular;
+        }
+
+        .line-border {
+            height: 2px;
+            background: #333;
+            width: 6.4cm;
+            display: inline-block;
+        }
+
+        .line-gcn {
+            height: 1px;
+            background: #333;
+            width: 5cm;
+            display: inline-block;
+            margin: 10px 0px;
+        }
+
+
+        .mb10 {
+            margin-bottom: 10px;
+        }
+
+        .font-w100 {
+            font-weight: 100;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        @media print {
+
+            body,
+            page {
+                margin: 0;
+                box-shadow: 0;
+            }
+        }
+
+        .front-fullnam {
+            font-size: 70px;
+        }
+
+        .info {
+            padding-top: 8.1cm;
+        }
+
+        .montserrat-font {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .ngay-sinh {
+            padding-top: 10px;
+        }
+
+        .ngaysinh-title {
+            color: #044469;
+            font-size: 17px;
+        }
+
+        .ngaysinhvalue {
+            color: black;
+            font-size: 20px;
+        }
+
+        .ten-khoa-hoc {
+            font-size: 28px;
+            color: black;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-top: 1.5cm;
+        }
+        .spantennguoiky{
+            font-weight: 500;
+            font-size: 22px;
+        }
+        .spanchucvu{
+            font-size: 15px;
+            padding-top: 0.1cm;
+        }
+        .ky-khoa-hoc{
+            font-size: 21px;
+            color:#044469;
+            padding-top: 0.1cm;
+        }
+    </style>
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- jQuery UI 1.11.4 -->
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var courseid = 0;
+        var userid = '0';
+        var _GET = (function () {
+            var _get = {};
+            var re = /[?&]([^=&]+)(=?)([^&]*)/g;
+            while (m = re.exec(location.search))
+                _get[decodeURIComponent(m[1])] = (m[2] == '=' ? decodeURIComponent(m[3]) : true);
+            return _get;
+        })();
+        function printonload() {
+            console.log("lấy dữ liệu chứng chỉ");
+            console.log(_GET.contextid);
+            console.log(_GET.userid);
+            //Show thông tin chứng chỉ nếu có.
+            $.ajax({
+                url: '/certificates/viewDetailcertificates',
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    userid: _GET.userid,
+                    contextid: _GET.contextid
+                },
+                async: true,
+                cache: false,
+                success: function (result) {
+                    if (result) {
+                        if (result.length > 0) {
+                            document.getElementById('spandepartment').innerHTML = result[0].department;
+                            document.getElementById('spanDATEOFBIRTH').innerHTML = result[0].DATEOFBIRTH;
+                            document.getElementById('spanFullName').innerHTML = result[0].FullName;
+                            document.getElementById('spanCourseName').innerHTML = result[0].CourseName;
+                            document.getElementById('spanTenNguoiKy').innerHTML = result[0].TenNguoiKy;
+                            document.getElementById('spanchucvu').innerHTML = result[0].chucvu;
+                            document.getElementById('spanngaycap').innerHTML = result[0].sdateissue;
+                            document.getElementById('spandecisionnumber').innerHTML = result[0].decisionnumber;
+                            document.getElementById('spancode').innerHTML = result[0].code;
+                            document.getElementById('spansdate_sign').innerHTML = result[0].sdate_sign;
+
+                            //$("#inputdateissue").val(result[0].sdateissue);
+                            //$("#inputexpiredate").val(result[0].sexpiredate);
+                            //$("#inputexpireperiod").val(result[0].sexpireperiod);
+                        }
+                    }
+                },
+                error: function (xhr, status, error) {
+
+                }
+            });
+            return false;
+        }
+    </script>
+</head>
+
+<body onload="printonload();">
+    <page size="A4" layout="landscape">
+        <div class="border">
+            <div class="body-print">
+                <div class="info">
+                    <div class="dancing-script-title front-fullnam" id="spanFullName">Nguyễn Văn A</div>
+                    <div class="ngay-sinh">
+                        <span class="ngaysinh-title montserrat-font">
+                            Ngày sinh:
+                        </span>
+                        <span class="ngaysinhvalue montserrat-font">
+                            16/08/1994
+                        </span>
+                    </div>
+                    <div class="ten-khoa-hoc montserrat-font">Kiến thức cơ bản về sở hữu trí tuệ</div>
+                    <div class="ky-khoa-hoc montserrat-font">Khóa: 06/2025 ~ 12/2025</div>
+                </div>
+
+                <div class="SoGCN">
+                    <div class="font5 montserrat-font" style="    text-align: left;">Số <span id="spandecisionnumber"></span> ./GCN-
+                        <span id="spancode"></span>
+                    </div>
+                    <div class="line-gcn"></div>
+                    <div class="font5 montserrat-font" style="    text-align: left;">Ngày Cấp: <span id="spanngaycap"></span></div>
+                </div>
+                <div class="ChuKy">
+                    <div class="line-gcn"></div>
+                    <div class="montserrat-font spantennguoiky" id="spanTenNguoiKy">Nguyễn Văn B</div>
+                    <div class="montserrat-font spanchucvu" id="spanchucvu">Phó Cục Trưởng</div>
+                </div>
+            </div>
+        </div>
+    </page>
+</body>
+
+</html>
