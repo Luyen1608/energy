@@ -686,7 +686,16 @@ body {
     font-weight: 500;
     word-wrap: break-word;
 }
-
+.guildine-note span{
+    color:#42444A;
+}
+.register-a{
+     color: #0011fd;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
 .span-topic-note_span_04 {
     color: #395CC1;
     font-size: 16px;
@@ -2155,7 +2164,22 @@ body {
     gap: 29px;
     display: flex;
 }
-
+.info-guidleine{
+    gap:10px;
+}
+.video-guide{
+    width: 800px;
+    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+.guidline-section{
+     width: 100%;
+    display: flex;
+        justify-content: space-around;
+        background: linear-gradient(180deg, #ffffff 0%, #86A1CB 55.77%, #F9FAFB 100%)
+}
 .frame-22 {
     width: 759px;
     flex-direction: column;
@@ -2285,7 +2309,7 @@ body {
 .frame-20 {
     padding-left: 138px;
     padding-right: 138px;
-    background: #F9FAFB;
+    background: linear-gradient(180deg, #F9FAFB 0%, #F9FAFB 0.01%, #FFF 100%);
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
